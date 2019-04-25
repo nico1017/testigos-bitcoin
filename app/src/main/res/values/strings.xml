@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Bet Sports</string>
+    <string name="titulo"><b><u>Registrarse</u></b></string>
+    <string name="usuariotxt"><b>Usuario</b></string>
+    <string name="passwordtxt"><b>Contraseña</b></string>
+    <string name="edadtxt"><b>Edad</b></string>
+    <string name="mailtxt"><b>e-mail</b></string>
+    <string name="condiciones">Acepto los <u>Terminos y Condiciones</u></string>
+    <string name="botonRgistrar">REGISTRAR</string>
+    <string name="botonLimpiar">LIMPIAR</string>
 </resources>

@@ -49,42 +49,50 @@ public class RegisterActivity extends AppCompatActivity {
         padre = new LinearLayout(mContext);
         padre.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.MATCH_PARENT));
         padre.setOrientation(LinearLayout.VERTICAL);
+        padre.setBackground(getDrawable(R.drawable.background));
         padre.setPadding(25, 25, 25, 25);
 
         titulo = new TextView(mContext);
         titulo.setText(getText(R.string.titulo));
         titulo.setTextSize(26);
+        titulo.setTextColor(getColor(R.color.white));
         titulo.setGravity(Gravity.CENTER_HORIZONTAL);
         padre.addView(titulo);
 
         usuarioText = new TextView(mContext);
         usuarioText.setText(getString(R.string.usuariotxt));
         usuarioText.setTextSize(20);
+        usuarioText.setTextColor(getColor(R.color.white));
         usuarioText.setPadding(0,20,0,0);
         padre.addView(usuarioText);
 
         usuario = new EditText(mContext);
         usuario.setHint("Ingrese su Usuario");
+        usuario.setTextColor(getColor(R.color.white));
         padre.addView(usuario);
 
         passwordText = new TextView(mContext);
         passwordText.setText(getString(R.string.passwordtxt));
         passwordText.setTextSize(20);
+        passwordText.setTextColor(getColor(R.color.white));
         passwordText.setPadding(0,20,0,0);
         padre.addView(passwordText);
 
         password = new EditText(mContext);
         password.setHint("Ingrese su Contraseña");
+        password.setTextColor(getColor(R.color.white));
         password.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
         padre.addView(password);
 
         edadText = new TextView(mContext);
         edadText.setText(getString(R.string.edadtxt));
         edadText.setTextSize(20);
+        edadText.setTextColor(getColor(R.color.white));
         edadText.setPadding(0,20,0,0);
         padre.addView(edadText);
 
         edad = new EditText(mContext);
+        edad.setTextColor(getColor(R.color.white));
         edad.setInputType(InputType.TYPE_CLASS_NUMBER);
         edad.setHint("Ingrese su Edad");
         int max = 2;
@@ -94,11 +102,13 @@ public class RegisterActivity extends AppCompatActivity {
         mailText = new TextView(mContext);
         mailText.setText(getString(R.string.mailtxt));
         mailText.setTextSize(20);
+        mailText.setTextColor(getColor(R.color.white));
         mailText.setPadding(0,20,0,0);
         padre.addView(mailText);
 
         mail = new EditText(mContext);
         mail.setInputType(InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS);
+        mail.setTextColor(getColor(R.color.white));
         mail.setHint("Ingrese su e-mail");
         padre.addView(mail);
 
@@ -113,6 +123,7 @@ public class RegisterActivity extends AppCompatActivity {
         condicionesText = new TextView(mContext);
         condicionesText.setText(getString(R.string.condiciones));
         condicionesText.setTextSize(20);
+        condicionesText.setTextColor(getColor(R.color.white));
         condicionesText.setPadding(20,0,0,0);
         condiciones.addView(condicionesText);
 

@@ -2,7 +2,9 @@ package bo.testigos_del_bitcoin.betsports;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.InputFilter;
@@ -12,6 +14,7 @@ import android.util.Patterns;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -77,6 +80,9 @@ public class RegisterActivity extends AppCompatActivity {
         usuario = new EditText(mContext);
         usuario.setHint("Ingrese su Usuario");
         usuario.setTextColor(getColor(R.color.white));
+        usuario.setImeOptions(EditorInfo.IME_ACTION_NEXT);
+        usuario.setMaxLines(1);
+        usuario.setInputType(InputType.TYPE_CLASS_TEXT);
         padre.addView(usuario);
 
         passwordText = new TextView(mContext);
@@ -225,6 +231,8 @@ public class RegisterActivity extends AppCompatActivity {
         usuarioParaEnviar.setEdad(Integer.parseInt(edad.getText().toString()));
         usuarioParaEnviar.setEmail(mail.getText().toString());
 
+        llenarPreferences(usuario.getText().toString(), password.getText().toString());
+
         String json = new Gson().toJson(usuarioParaEnviar);
 
         Intent intent = new Intent();
@@ -232,6 +240,14 @@ public class RegisterActivity extends AppCompatActivity {
         setResult(RESULT_OK, intent);
         finish();
 
+    }
+
+    public void llenarPreferences(String us,String pass){
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(mContext);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putString(Constants.PREF_USER, us);
+        editor.putString(Constants.PREF_PASS, pass);
+        editor.apply();
     }
 
 

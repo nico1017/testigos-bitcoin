@@ -7,13 +7,16 @@ import android.os.Bundle;
 import android.text.InputFilter;
 import android.text.InputType;
 import android.text.Layout;
+import android.util.Patterns;
 import android.view.Gravity;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class RegisterActivity extends AppCompatActivity {
     Context mContext;
@@ -157,5 +160,58 @@ public class RegisterActivity extends AppCompatActivity {
         padre.addView(botones);
 
         setContentView(padre);
+
+        addEvents();
+    }
+
+    public void addEvents(){
+        registrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                validarFormulario();
+            }
+        });
+
+        limpiar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                usuario.setText("");
+                password.setText("");
+                edad.setText("");
+                mail.setText("");
+            }
+        });
+    }
+
+    public void validarFormulario(){
+        if(usuario.getText().toString().isEmpty()){
+            usuario.setError("Ingrese un usuario por favor");
+            return;
+        }
+
+        if(password.getText().toString().isEmpty()){
+            password.setError("Ingrese una contraseña por favor");
+            return;
+        }
+
+        if(edad.getText().toString().isEmpty()){
+            edad.setError("Ingrese su edad por favor");
+            return;
+        }
+
+        if(mail.getText().toString().isEmpty()){
+            mail.setError("Ingrese un mail por favor");
+            return;
+        }
+
+        if(!Patterns.EMAIL_ADDRESS.matcher(mail.getText().toString()).matches()){
+            mail.setError("Ingrese un e-mail válido por favor");
+            return;
+        }
+
+        if(!checkbox.isChecked()){
+            Toast.makeText(mContext,"Por favor acepte los Términos y Condiciones",Toast.LENGTH_LONG).show();
+            return;
+        }
     }
 }

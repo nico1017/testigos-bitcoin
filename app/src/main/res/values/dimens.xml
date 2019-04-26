@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="trabajo">400</dimen>
+    <dimen name="deportefav">300</dimen>
+    <dimen name="largo">600</dimen>
+    <dimen name="larg">500</dimen>
+</resources>

@@ -1,6 +1,7 @@
 package bo.testigos_del_bitcoin.betsports;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -17,6 +18,10 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.gson.Gson;
+
+import bo.testigos_del_bitcoin.betsports.models.User;
 
 public class RegisterActivity extends AppCompatActivity {
     Context mContext;
@@ -213,5 +218,21 @@ public class RegisterActivity extends AppCompatActivity {
             Toast.makeText(mContext,"Por favor acepte los Términos y Condiciones",Toast.LENGTH_LONG).show();
             return;
         }
+
+        User usuarioParaEnviar = new User();
+        usuarioParaEnviar.setNombreUsuario(usuario.getText().toString());
+        usuarioParaEnviar.setPassword(password.getText().toString());
+        usuarioParaEnviar.setEdad(Integer.parseInt(edad.getText().toString()));
+        usuarioParaEnviar.setEmail(mail.getText().toString());
+
+        String json = new Gson().toJson(usuarioParaEnviar);
+
+        Intent intent = new Intent();
+        intent.putExtra(Constants.CODIGO_REGISTRAR_USUARIO, json);
+        setResult(RESULT_OK, intent);
+        finish();
+
     }
+
+
 }

@@ -29,6 +29,7 @@
             android:textStyle="bold"/>
 
         <EditText
+            android:id="@+id/usuario_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:imeOptions="actionNext"
@@ -45,12 +46,14 @@
             android:textColor="@color/white"/>
 
         <EditText
+            android:id="@+id/password_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/white"
             android:inputType="textPassword"/>
 
         <Button
+            android:id="@+id/ingresar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/background_botones"
@@ -61,6 +64,7 @@
             android:textColor="@color/white"/>
 
         <Button
+            android:id="@+id/registrarse"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/background_botones"

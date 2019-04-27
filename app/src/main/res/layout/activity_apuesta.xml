@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbar"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/backArrow"
+            android:layout_width="@dimen/toolbar"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="false"
+            android:layout_alignParentLeft="false"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="0dp"
+            app:srcCompat="@drawable/backArrow" />
+
+        <TextView
+            android:id="@+id/dinero"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center_horizontal"
+            android:text="0$"
+            android:textSize="36sp"
+            tools:layout_editor_absoluteX="273dp"
+            tools:layout_editor_absoluteY="0dp" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/parte0"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="45sp"
+        android:layout_below="@+id/toolbar">
+
+        <LinearLayout
+            android:id="@+id/parte1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/ganara"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="1"
+                android:text="¿Quien ganara?"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/cuota"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Cuota"
+                android:textSize="30sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/equipoA"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/parte0"
+        android:paddingTop="70sp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/nombreEquipo1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Equipo A"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/cuota1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="3.2"
+            android:textAlignment="center"
+            android:textSize="24sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/equipoB"
+        android:layout_below="@+id/equipoA"
+        android:paddingTop="30sp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/nombreEquipoB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Equipo B"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/cuota2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="3.6"
+            android:textAlignment="center"
+            android:textSize="24sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/parte2"
+        android:layout_below="@+id/equipoB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/parte2.1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingTop="60sp"
+            android:textSize="30sp"
+            android:text="Cantidad" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/parte3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/parte2"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/parte3.1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingTop="30sp"
+            android:text="Cuota"
+            android:textSize="30sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/boton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/parte3"
+        android:paddingTop="70sp"
+
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Jugar" />
+    </LinearLayout>
+
+</RelativeLayout>

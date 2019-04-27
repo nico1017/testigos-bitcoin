@@ -57,57 +57,77 @@
                 android:id="@+id/futbol"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/futbol" />
+                android:text="@string/futbol"
+                android:textSize="18sp" />
 
             <CheckBox
                 android:id="@+id/basketball"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/basketball"/>
+                android:text="@string/basketball"
+                android:textSize="18sp" />
 
             <CheckBox
                 android:id="@+id/tenis"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/tenis" />
+                android:text="@string/tenis"
+                android:textSize="18sp" />
 
             <CheckBox
                 android:id="@+id/carrera"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/Carreracaballos" />
+                android:text="@string/Carreracaballos"
+                android:textSize="18sp" />
 
             <CheckBox
                 android:id="@+id/Esports"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/Esports" />
+                android:text="@string/Esports"
+                android:textSize="18sp" />
 
             <CheckBox
                 android:id="@+id/pelea"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/Peleadegallos" />
+                android:text="@string/Peleadegallos"
+                android:textSize="18sp" />
 
             <CheckBox
                 android:id="@+id/formula"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/formula1" />
+                android:text="@string/formula1"
+                android:textSize="18sp" />
 
             <CheckBox
                 android:id="@+id/ufc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/UFC" />
+                android:text="@string/UFC"
+                android:textSize="18sp" />
 
             <Button
                 android:id="@+id/button"
                 style="@style/Widget.AppCompat.Button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="validar"
-                android:text="@string/Aceptar" />
+                android:background="@color/amber"
+                android:text="@string/Aceptar"
+                android:textColor="@color/morado"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/deportesimag"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                app:srcCompat="@drawable/sports"
+                tools:ignore="ContentDescription"/>
         </LinearLayout>
 
     </FrameLayout>

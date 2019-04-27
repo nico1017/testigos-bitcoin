@@ -58,8 +58,9 @@ public class LoginActivity extends AppCompatActivity {
                         Toast.makeText(mContext, "ChooseSports", Toast.LENGTH_LONG).show();
                         //TODO Conectar con ChooseSportActivity
                     }else {
-                        Toast.makeText(mContext, "MainMenu", Toast.LENGTH_LONG).show();
-                        //TODO Conectar con la pagina principal
+                        //Toast.makeText(mContext, "MainMenu", Toast.LENGTH_LONG).show();
+                        Intent intent = new Intent(mContext, MainMenuActivity.class);
+                        startActivity(intent);
                     }
                 }else{
                     Toast.makeText(mContext, "Usuario o contraseña incorrecta", Toast.LENGTH_LONG).show();

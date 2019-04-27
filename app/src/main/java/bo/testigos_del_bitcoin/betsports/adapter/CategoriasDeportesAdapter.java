@@ -57,9 +57,9 @@ public class CategoriasDeportesAdapter extends BaseAdapter {
         Deportes deporteActual = items.get(position);
         viewHolder.logo.setImageResource(deporteActual.getLogo());
         viewHolder.anio.setText(String.valueOf(deporteActual.getAnio()));
-        viewHolder.mes.setText(String.valueOf(deporteActual.getMes()));
-        viewHolder.dia.setText(String.valueOf(deporteActual.getDia()));
-        viewHolder.hora.setText(String.valueOf(deporteActual.getHora()));
+        viewHolder.mes.setText(deporteActual.getMes() + "/");
+        viewHolder.dia.setText(deporteActual.getDia() + "/");
+        viewHolder.hora.setText(deporteActual.getHora() + ":");
         viewHolder.minutos.setText(String.valueOf(deporteActual.getMinutos()));
         viewHolder.equipoA.setText(deporteActual.getEquipoUno());
         viewHolder.equipoB.setText(deporteActual.getEquipoDos());

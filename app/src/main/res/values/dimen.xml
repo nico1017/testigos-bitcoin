@@ -10,4 +10,5 @@
     <dimen name="space_md">8dp</dimen>
     <dimen name="space_sm">4dp</dimen>
     <dimen name="space_xs">2dp</dimen>
+    <dimen name="super_title">30sp</dimen>
 </resources>

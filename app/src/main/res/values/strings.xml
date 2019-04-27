@@ -8,4 +8,6 @@
     <string name="condiciones">Acepto los <u>Terminos y Condiciones</u></string>
     <string name="botonRgistrar">REGISTRAR</string>
     <string name="botonLimpiar">LIMPIAR</string>
+    <string name="registrarsetxt">REGISTRARSE</string>
+    <string name="ingresar">INGRESAR</string>
 </resources>

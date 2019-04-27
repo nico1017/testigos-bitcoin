@@ -8,4 +8,5 @@
     <dimen name="dd">150</dimen>
     <dimen name="ww">400</dimen>
     <dimen name="qqq">500</dimen>
+    <dimen name="f">600dp</dimen>
 </resources>

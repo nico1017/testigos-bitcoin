@@ -1,128 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_height="match_parent"
-    android:layout_width="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context=".RegisterActivity">
 
-    <RelativeLayout
-        android:id="@+id/padre"
-        android:layout_width="418dp"
-        android:layout_height="729dp"
-        android:background="@drawable/background"
-        tools:layout_editor_absoluteX="-3dp"
-        tools:layout_editor_absoluteY="0dp">
+    <FrameLayout
+        android:id="@+id/frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="0dp">
 
         <LinearLayout
+            android:id="@+id/cabecera"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dd"
-            android:background="@color/amber"
-            android:orientation="vertical"
-            android:paddingTop="30dp">
+            android:layout_height="wrap_content"
+            android:background="@color/morado"
+            android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/bienv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="bienvenido usuario  "
+                android:layout_marginTop="10dp"
+                android:text="@string/bienvenido"
                 android:textAlignment="center"
-                android:textAppearance="@style/TextAppearance.AppCompat"
-                android:textColor="@color/morado"
-                android:textSize="30sp"
+                android:textColor="@color/amber"
+                android:textSize="24sp"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/introduce"
+                android:id="@+id/deport"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="selecciona tus deportes de interes"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="15dp"
+                android:text="@string/selecciona"
                 android:textAlignment="center"
-                android:textAppearance="@style/TextAppearance.AppCompat"
-                android:textColor="@color/morado"
-                android:textSize="26sp"
-                android:textStyle="bold" />
+                android:textColor="@color/amber"
+                android:textSize="23sp"
+                android:textStyle="bold"
+                tools:text="Selecciona los deportes de tu interes" />
+
         </LinearLayout>
 
-        <RelativeLayout
-            android:id="@+id/relative"
+        <LinearLayout
+            android:id="@+id/inferior"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="@dimen/f"
+            android:layout_gravity="bottom"
+            android:orientation="vertical">
 
-            <LinearLayout
-                android:layout_width="@dimen/deportefav"
-                android:layout_height="400dp"
-                android:layout_centerInParent="false"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="false"
-                android:layout_marginTop="200dp"
-                android:background="@drawable/login_background"
-                android:orientation="vertical">
+            <CheckBox
+                android:id="@+id/futbol"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/futbol" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/login_background"
-                    android:orientation="vertical">
+            <CheckBox
+                android:id="@+id/basketball"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/basketball"/>
 
-                    <CheckBox
-                        android:id="@+id/checkBox6"
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:button="@mipmap/ic_launcher"
-                        android:checked="false"
-                        android:clickable="true"
-                        android:focusable="auto"
-                        android:text="futbol"
-                        android:textColor="@color/white"
-                        android:textSize="24sp"
-                        android:textStyle="bold" />
+            <CheckBox
+                android:id="@+id/tenis"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/tenis" />
 
-                    <CheckBox
-                        android:id="@+id/checkBox7"
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:checked="false"
-                        android:text="CheckBox" />
+            <CheckBox
+                android:id="@+id/carrera"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Carreracaballos" />
 
-                    <CheckBox
-                        android:id="@+id/checkBox8"
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:text="CheckBox" />
+            <CheckBox
+                android:id="@+id/Esports"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Esports" />
 
-                    <CheckBox
-                        android:id="@+id/checkBox9"
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:text="CheckBox" />
+            <CheckBox
+                android:id="@+id/pelea"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Peleadegallos" />
 
-                    <CheckBox
-                        android:id="@+id/checkBox10"
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:text="CheckBox" />
+            <CheckBox
+                android:id="@+id/formula"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/formula1" />
 
-                    <CheckBox
-                        android:id="@+id/checkBox11"
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:text="CheckBox" />
+            <CheckBox
+                android:id="@+id/ufc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/UFC" />
 
-                    <CheckBox
-                        android:id="@+id/checkBox12"
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:text="CheckBox" />
+            <Button
+                android:id="@+id/button"
+                style="@style/Widget.AppCompat.Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="validar"
+                android:text="@string/Aceptar" />
+        </LinearLayout>
 
-                    <CheckBox
-                        android:id="@+id/checkBox13"
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:text="CheckBox" />
-                </LinearLayout>
-            </LinearLayout>
-        </RelativeLayout>
-
-    </RelativeLayout>
+    </FrameLayout>
 </android.support.constraint.ConstraintLayout>

@@ -10,4 +10,16 @@
     <string name="botonLimpiar">LIMPIAR</string>
     <string name="registrarsetxt">REGISTRARSE</string>
     <string name="ingresar">INGRESAR</string>
+    <string name="futbol">futbol</string>
+    <string name="basketball">basketball</string>
+    <string name="UFC">UFC</string>
+    <string name="Peleadegallos">Pelea de gallos</string>
+    <string name="formula1">formula1</string>
+    <string name="tenis">Tenis</string>
+    <string name="Esports">Esports</string>
+    <string name="Carreracaballos">Carrera caballos</string>
+    <string name="selecciona">Selecciona los deportes de tu interes</string>
+    <string name="bienvenido">Bienvenido usuario</string>
+    <string name="Aceptar">Aceptar</string>
+
 </resources>

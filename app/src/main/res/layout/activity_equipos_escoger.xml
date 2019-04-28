@@ -13,5 +13,44 @@
         android:layout_margin="0dp"
         android:background="@drawable/background2">
 
+        <LinearLayout
+            android:id="@+id/cabecera1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/morado">
+
+            <TextView
+                android:id="@+id/fut"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:text="@string/futbol"
+                android:textAlignment="center"
+                android:textColor="@color/amber"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/deport"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/seleccionaE"
+                android:textAlignment="center"
+                android:textColor="@color/amber"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                tools:text="@string/seleccionaE" />
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/evento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginTop="100dp">
+        </ListView>
     </FrameLayout>
 </android.support.constraint.ConstraintLayout>

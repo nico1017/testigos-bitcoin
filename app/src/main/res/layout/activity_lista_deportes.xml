@@ -15,6 +15,7 @@
         android:layout_height="wrap_content"
         android:text="Categoria"
         android:textSize="@dimen/title"
+        android:textColor="@color/white"
         android:background="@color/amber"/>
 
     <ListView

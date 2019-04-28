@@ -5,11 +5,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 
@@ -24,6 +26,7 @@ public class BetActivity extends AppCompatActivity {
     private TextView cuota1;
     private TextView cuota2;
     private EditText cantidad;
+    private Button jugar;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -34,6 +37,7 @@ public class BetActivity extends AppCompatActivity {
 
         initViews();
         reciveData();
+        addEvents();
     }
 
     public void initViews(){
@@ -42,6 +46,8 @@ public class BetActivity extends AppCompatActivity {
         cuota1 = findViewById(R.id.cuota1);
         cuota2 = findViewById(R.id.cuota2);
         cantidad = findViewById(R.id.cantidad);
+        jugar = findViewById(R.id.button);
+
     }
 
     public void reciveData(){
@@ -49,5 +55,14 @@ public class BetActivity extends AppCompatActivity {
 
         nombreEquipo1.setText(seleccionado.getEquipoUno());
         nombreEquipo2.setText(seleccionado.getEquipoDos());
+    }
+
+    public void addEvents(){
+        jugar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(mContext, "Tu apuesta ha sido registrada", Toast.LENGTH_LONG).show();
+            }
+        });
     }
 }

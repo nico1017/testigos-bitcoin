@@ -73,6 +73,9 @@ public class ChooseSportActivity extends AppCompatActivity implements View.OnCli
         if(espc.isChecked() ){
             prueba+="E sports";
         }
+        if(espc.isChecked() ){
+            prueba+="E sports";
+        }
         Toast.makeText(getApplicationContext(),prueba,Toast.LENGTH_SHORT).show();
         Intent siguiente = new Intent(this,EquiposEscogerActivity.class);
         startActivity(siguiente);

@@ -52,72 +52,83 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/f"
             android:layout_gravity="bottom"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="@dimen/space_lg">
 
             <CheckBox
                 android:id="@+id/futbol"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/futbol"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                android:textColor="@color/white"/>
 
             <CheckBox
                 android:id="@+id/basketball"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/basketball"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                android:textColor="@color/white"/>
 
             <CheckBox
                 android:id="@+id/tenis"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/tenis"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                android:textColor="@color/white"/>
 
             <CheckBox
                 android:id="@+id/carrera"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/Carreracaballos"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                android:textColor="@color/white"/>
 
             <CheckBox
                 android:id="@+id/Esports"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/Esports"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                android:textColor="@color/white"/>
 
             <CheckBox
                 android:id="@+id/pelea"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/Peleadegallos"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                android:textColor="@color/white"/>
 
             <CheckBox
                 android:id="@+id/formula"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/formula1"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                android:textColor="@color/white"/>
 
             <CheckBox
                 android:id="@+id/ufc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/UFC"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                android:textColor="@color/white"/>
 
             <Button
                 android:id="@+id/button"
                 style="@style/Widget.AppCompat.Button"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@color/amber"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/background_botones"
                 android:text="@string/Aceptar"
-                android:textColor="@color/morado"
+                android:textColor="@color/white"
+                android:padding="@dimen/space_lg"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 

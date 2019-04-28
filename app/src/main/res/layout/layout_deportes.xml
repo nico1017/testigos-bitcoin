@@ -27,39 +27,38 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_alignParentTop="true"
-                android:layout_marginBottom="10dp">
+                android:layout_alignParentTop="true">
 
                 <TextView
                     android:id="@+id/dia"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="@dimen/title"/>
+                    android:textSize="15sp"/>
 
                 <TextView
                     android:id="@+id/mes"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="@dimen/title"/>
+                    android:textSize="15sp"/>
 
                 <TextView
                     android:id="@+id/anio"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="@dimen/title"/>
+                    android:textSize="15sp"/>
 
                 <TextView
                     android:layout_marginStart="10dp"
                     android:id="@+id/hora"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="@dimen/title"/>
+                    android:textSize="15sp"/>
 
                 <TextView
                     android:id="@+id/minutos"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="@dimen/title"/>
+                    android:textSize="15sp"/>
 
             </LinearLayout>
 
@@ -67,26 +66,27 @@
                 android:id="@+id/cont2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:layout_below="@+id/cont1">
 
                 <TextView
                     android:id="@+id/equipoA"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="@dimen/title"/>
+                    android:textSize="15sp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text=" Vs "
-                    android:textSize="@dimen/title"/>
+                    android:gravity="center"
+                    android:textSize="10sp"/>
 
                 <TextView
                     android:id="@+id/equipoB"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="@dimen/title"/>
+                    android:textSize="15sp"/>
 
             </LinearLayout>
         </RelativeLayout>

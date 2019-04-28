@@ -26,6 +26,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText password;
     private Button ingresar;
     private Button registrarse;
+    private User ususarioRecivido;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,8 +56,10 @@ public class LoginActivity extends AppCompatActivity {
 
                 if(validarUsuario(usVerficar, passVerificar)){
                     if(recienRegistrado) {
-                        Toast.makeText(mContext, "ChooseSports", Toast.LENGTH_LONG).show();
-                        //TODO Conectar con ChooseSportActivity
+                        //Toast.makeText(mContext, "ChooseSports", Toast.LENGTH_LONG).show();
+                        Intent intent = new Intent(mContext, ChooseSportActivity.class);
+                        intent.putExtra(Constants.CODIGO_PASAR_A_CHOOSE, ususarioRecivido.getNombreUsuario());
+                        startActivity(intent);
                     }else {
                         //Toast.makeText(mContext, "MainMenu", Toast.LENGTH_LONG).show();
                         Intent intent = new Intent(mContext, MainMenuActivity.class);
@@ -83,7 +86,7 @@ public class LoginActivity extends AppCompatActivity {
             if (resultCode == RESULT_OK){
                 if(data != null){
                     String json = data.getStringExtra(Constants.CODIGO_REGISTRAR_USUARIO);
-                    User ususarioRecivido = new Gson().fromJson(json, User.class);
+                    ususarioRecivido = new Gson().fromJson(json, User.class);
                     usuario.setText(ususarioRecivido.getNombreUsuario());
                     password.setText(ususarioRecivido.getPassword());
                     recienRegistrado = true;

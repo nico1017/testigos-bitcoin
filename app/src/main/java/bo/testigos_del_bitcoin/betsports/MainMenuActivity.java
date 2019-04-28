@@ -43,6 +43,7 @@ public class MainMenuActivity extends AppCompatActivity {
 
         createLists();
         initViews();
+        addEvents();
 
         /*if (this.toolbar != null) {
             // Aqui configuramos nuestro Toolbar, con el ícono del Drawer a la izquierda
@@ -66,20 +67,68 @@ public class MainMenuActivity extends AppCompatActivity {
         juego = findViewById(R.id.juego);
         listaGeneral = findViewById(R.id.lista);
         //toolbar = findViewById(R.id.toolbar);
+        //drawerLayout = findViewById(R.layout.--);
         CategoriasDeportesAdapter adapter = new CategoriasDeportesAdapter(mContext, listProximos);
         listaGeneral.setAdapter(adapter);
     }
 
     public void createLists(){
-        ///TODO llenar las listas
+        ///TODO llenar todas las listas
         listProximos = new ArrayList<>();
+        listPopulares = new ArrayList<>();
+        listEnJuego = new ArrayList<>();
         listProximos.add(new Deportes(1, "Equipo A", "Equipo B", R.drawable.futbol, 2019,5,4, 8, 30));
-        listProximos.add(new Deportes(1, "Equipo C", "Equipo D", R.drawable.baloncesto, 2019,5,4, 10, 30));
-        listProximos.add(new Deportes(1, "Equipo E", "Equipo F", R.drawable.caballo, 2019,5,5, 9, 00));
-        listProximos.add(new Deportes(1, "Equipo G", "Equipo H", R.drawable.e_sports, 2019,5,5, 12, 00));
-        listProximos.add(new Deportes(1, "Equipo I", "Equipo J", R.drawable.f1, 2019,5,7, 8, 30));
-        listProximos.add(new Deportes(1, "Equipo K", "Equipo L", R.drawable.gallo, 2019,5,7, 13, 30));
-        listProximos.add(new Deportes(1, "Equipo M", "Equipo N", R.drawable.tenis, 2019,5,7, 13, 30));
-        listProximos.add(new Deportes(1, "Equipo O", "Equipo O", R.drawable.ufc, 2019,5,7, 13, 30));
+        listProximos.add(new Deportes(1, "Equipo C", "Equipo D", R.drawable.futbol, 2019,5,4, 10, 30));
+        listProximos.add(new Deportes(1, "Equipo E", "Equipo F", R.drawable.futbol, 2019,5,5, 9, 00));
+        listProximos.add(new Deportes(1, "Equipo G", "Equipo H", R.drawable.futbol, 2019,5,5, 12, 00));
+        listProximos.add(new Deportes(1, "Equipo I", "Equipo J", R.drawable.futbol, 2019,5,7, 8, 30));
+        listProximos.add(new Deportes(1, "Equipo K", "Equipo L", R.drawable.futbol, 2019,5,7, 13, 30));
+        listProximos.add(new Deportes(1, "Equipo M", "Equipo N", R.drawable.futbol, 2019,5,7, 13, 30));
+        listProximos.add(new Deportes(1, "Equipo O", "Equipo O", R.drawable.futbol, 2019,5,7, 13, 30));
+
+        listPopulares.add(new Deportes(1, "Equipo C", "Equipo D", R.drawable.baloncesto, 2019,5,4, 10, 30));
+        listPopulares.add(new Deportes(1, "Equipo C", "Equipo D", R.drawable.baloncesto, 2019,5,4, 10, 30));
+        listPopulares.add(new Deportes(1, "Equipo C", "Equipo D", R.drawable.baloncesto, 2019,5,4, 10, 30));
+        listPopulares.add(new Deportes(1, "Equipo C", "Equipo D", R.drawable.baloncesto, 2019,5,4, 10, 30));
+        listPopulares.add(new Deportes(1, "Equipo C", "Equipo D", R.drawable.baloncesto, 2019,5,4, 10, 30));
+        listPopulares.add(new Deportes(1, "Equipo C", "Equipo D", R.drawable.baloncesto, 2019,5,4, 10, 30));
+        listPopulares.add(new Deportes(1, "Equipo C", "Equipo D", R.drawable.baloncesto, 2019,5,4, 10, 30));
+        listPopulares.add(new Deportes(1, "Equipo C", "Equipo D", R.drawable.baloncesto, 2019,5,4, 10, 30));
+        listPopulares.add(new Deportes(1, "Equipo C", "Equipo D", R.drawable.baloncesto, 2019,5,4, 10, 30));
+
+        listEnJuego.add(new Deportes(1, "Equipo C", "Equipo D", R.drawable.e_sports, 2019,5,4, 10, 30));
+        listEnJuego.add(new Deportes(1, "Equipo C", "Equipo D", R.drawable.e_sports, 2019,5,4, 10, 30));
+        listEnJuego.add(new Deportes(1, "Equipo C", "Equipo D", R.drawable.e_sports, 2019,5,4, 10, 30));
+        listEnJuego.add(new Deportes(1, "Equipo C", "Equipo D", R.drawable.e_sports, 2019,5,4, 10, 30));
+        listEnJuego.add(new Deportes(1, "Equipo C", "Equipo D", R.drawable.e_sports, 2019,5,4, 10, 30));
+        listEnJuego.add(new Deportes(1, "Equipo C", "Equipo D", R.drawable.e_sports, 2019,5,4, 10, 30));
+        listEnJuego.add(new Deportes(1, "Equipo C", "Equipo D", R.drawable.e_sports, 2019,5,4, 10, 30));
+        listEnJuego.add(new Deportes(1, "Equipo C", "Equipo D", R.drawable.e_sports, 2019,5,4, 10, 30));
+    }
+
+    public void addEvents(){
+        proximos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CategoriasDeportesAdapter adapter = new CategoriasDeportesAdapter(mContext, listProximos);
+                listaGeneral.setAdapter(adapter);
+            }
+        });
+
+        populares.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CategoriasDeportesAdapter adapter = new CategoriasDeportesAdapter(mContext, listPopulares);
+                listaGeneral.setAdapter(adapter);
+            }
+        });
+
+        juego.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CategoriasDeportesAdapter adapter = new CategoriasDeportesAdapter(mContext, listEnJuego);
+                listaGeneral.setAdapter(adapter);
+            }
+        });
     }
 }

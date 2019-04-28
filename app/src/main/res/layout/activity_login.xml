@@ -74,6 +74,30 @@
             android:textSize="@dimen/title"
             android:textColor="@color/white"/>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/super_title">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="25"
+                android:src="@drawable/facebook_icon"/>
+
+            <TextView
+                android:id="@+id/facebook"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="75"
+                android:text="Visita nuestro Facebook"
+                android:textSize="@dimen/title"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:layout_marginStart="@dimen/space_md"
+                android:onClick="onClick"/>
+        </LinearLayout>
+
     </LinearLayout>
 
 </RelativeLayout>

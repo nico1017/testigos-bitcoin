@@ -3,6 +3,7 @@ package bo.testigos_del_bitcoin.betsports;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -16,7 +17,7 @@ import com.google.gson.Gson;
 
 import bo.testigos_del_bitcoin.betsports.models.User;
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity implements View.OnClickListener{
 
     private Context mContext;
 
@@ -109,5 +110,13 @@ public class LoginActivity extends AppCompatActivity {
         String usGuardado = prefs.getString(Constants.PREF_USER, "");
         String passGuardada = prefs.getString(Constants.PREF_PASS, "");
         return us.equals(usGuardado) && pass.equals(passGuardada);
+    }
+
+    @Override
+    public void onClick(View v) {
+        String url = "https://www.facebook.com/BetSports-852952505043115/?modal=admin_todo_tour";
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse(url));
+        startActivity(intent);
     }
 }

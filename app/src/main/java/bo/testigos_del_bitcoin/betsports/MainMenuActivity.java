@@ -2,6 +2,7 @@ package bo.testigos_del_bitcoin.betsports;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -12,6 +13,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toolbar;
 
 import com.google.gson.Gson;
@@ -80,7 +82,6 @@ public class MainMenuActivity extends AppCompatActivity {
     }
 
     public void createLists(){
-        ///TODO llenar todas las listas
         listProximos = new ArrayList<>();
         listPopulares = new ArrayList<>();
         listEnJuego = new ArrayList<>();

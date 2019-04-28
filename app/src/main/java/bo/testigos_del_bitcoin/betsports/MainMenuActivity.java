@@ -175,4 +175,8 @@ public class MainMenuActivity extends AppCompatActivity {
             });
         }
     }
+    public void goToCategorias(View view){
+        Intent intent = new Intent(mContext, CategoriasActivity.class);
+        startActivity(intent);
+    }
 }

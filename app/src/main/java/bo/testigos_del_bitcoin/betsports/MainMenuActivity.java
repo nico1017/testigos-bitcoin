@@ -85,32 +85,32 @@ public class MainMenuActivity extends AppCompatActivity {
         listProximos = new ArrayList<>();
         listPopulares = new ArrayList<>();
         listEnJuego = new ArrayList<>();
-        listProximos.add(new Deportes(1, "Equipo A", "Equipo B", R.drawable.futbol, 2019,5,4, 8, 30));
-        listProximos.add(new Deportes(2, "Equipo C", "Equipo D", R.drawable.futbol, 2019,5,4, 10, 30));
-        listProximos.add(new Deportes(3, "Equipo E", "Equipo F", R.drawable.futbol, 2019,5,5, 9, 00));
-        listProximos.add(new Deportes(4, "Equipo G", "Equipo H", R.drawable.futbol, 2019,5,5, 12, 00));
-        listProximos.add(new Deportes(5, "Equipo I", "Equipo J", R.drawable.futbol, 2019,5,7, 8, 30));
-        listProximos.add(new Deportes(6, "Equipo K", "Equipo L", R.drawable.futbol, 2019,5,7, 13, 30));
-        listProximos.add(new Deportes(7, "Equipo M", "Equipo N", R.drawable.futbol, 2019,5,7, 13, 30));
-        listProximos.add(new Deportes(8, "Equipo O", "Equipo P", R.drawable.futbol, 2019,5,7, 13, 30));
+        listProximos.add(new Deportes(1, "Toronto Raptors", "Philadelphia 76ers", R.drawable.baloncesto, 2019, 04, 25, 16, 00));
+        listProximos.add(new Deportes(2, "Los Angeles Lakers", "BostonCeltics", R.drawable.baloncesto, 2019, 04, 25, 17, 00));
+        listProximos.add(new Deportes(3, "Novak Djokovic", "Rafael Nadal", R.drawable.tenis, 2019, 04, 25, 16, 00));
+        listProximos.add(new Deportes(4, "Roger Federer", "Alexander Zverev", R.drawable.tenis, 2019, 04, 25, 17, 00));
+        listProximos.add(new Deportes(5, "Chicken Little", "El Gallo Claudio", R.drawable.gallo, 2019, 04, 25, 16, 00));
+        listProximos.add(new Deportes(6, "Gallo Campine", "Brahma", R.drawable.gallo, 2019, 04, 25, 17, 00));
+        listProximos.add(new Deportes(7, "Todd Duffee", "Ben Rothwell", R.drawable.ufc, 2019, 04, 25, 16, 00));
+        listProximos.add(new Deportes(8, "Walt Harris", "Travis Browne", R.drawable.ufc, 2019, 04, 25, 17, 00));
 
-        listPopulares.add(new Deportes(1, "Equipo A", "Equipo B", R.drawable.baloncesto, 2019,5,4, 10, 30));
-        listPopulares.add(new Deportes(2, "Equipo C", "Equipo D", R.drawable.baloncesto, 2019,5,4, 10, 30));
-        listPopulares.add(new Deportes(3, "Equipo E", "Equipo F", R.drawable.baloncesto, 2019,5,4, 10, 30));
-        listPopulares.add(new Deportes(4, "Equipo G", "Equipo H", R.drawable.baloncesto, 2019,5,4, 10, 30));
-        listPopulares.add(new Deportes(5, "Equipo I", "Equipo J", R.drawable.baloncesto, 2019,5,4, 10, 30));
-        listPopulares.add(new Deportes(6, "Equipo K", "Equipo L", R.drawable.baloncesto, 2019,5,4, 10, 30));
-        listPopulares.add(new Deportes(7, "Equipo M", "Equipo N", R.drawable.baloncesto, 2019,5,4, 10, 30));
-        listPopulares.add(new Deportes(8, "Equipo O", "Equipo P", R.drawable.baloncesto, 2019,5,4, 10, 30));
+        listPopulares.add(new Deportes(3, "Novak Djokovic", "Rafael Nadal", R.drawable.tenis, 2019, 04, 25, 16, 00));
+        listPopulares.add(new Deportes(4, "Roger Federer", "Alexander Zverev", R.drawable.tenis, 2019, 04, 25, 17, 00));
+        listPopulares.add(new Deportes(1, "Toronto Raptors", "Philadelphia 76ers", R.drawable.baloncesto, 2019, 04, 25, 16, 00));
+        listPopulares.add(new Deportes(6, "Gallo Campine", "Brahma", R.drawable.gallo, 2019, 04, 25, 17, 00));
+        listPopulares.add(new Deportes(7, "Todd Duffee", "Ben Rothwell", R.drawable.ufc, 2019, 04, 25, 16, 00));
+        listPopulares.add(new Deportes(2, "Los Angeles Lakers", "BostonCeltics", R.drawable.baloncesto, 2019, 04, 25, 17, 00));
+        listPopulares.add(new Deportes(5, "Chicken Little", "El Gallo Claudio", R.drawable.gallo, 2019, 04, 25, 16, 00));
+        listPopulares.add(new Deportes(8, "Walt Harris", "Travis Browne", R.drawable.ufc, 2019, 04, 25, 17, 00));
 
-        listEnJuego.add(new Deportes(1, "Equipo A", "Equipo B", R.drawable.e_sports, 2019,5,4, 10, 30));
-        listEnJuego.add(new Deportes(2, "Equipo C", "Equipo D", R.drawable.e_sports, 2019,5,4, 10, 30));
-        listEnJuego.add(new Deportes(3, "Equipo E", "Equipo F", R.drawable.e_sports, 2019,5,4, 10, 30));
-        listEnJuego.add(new Deportes(4, "Equipo G", "Equipo H", R.drawable.e_sports, 2019,5,4, 10, 30));
-        listEnJuego.add(new Deportes(5, "Equipo I", "Equipo J", R.drawable.e_sports, 2019,5,4, 10, 30));
-        listEnJuego.add(new Deportes(6, "Equipo K", "Equipo L", R.drawable.e_sports, 2019,5,4, 10, 30));
-        listEnJuego.add(new Deportes(7, "Equipo M", "Equipo N", R.drawable.e_sports, 2019,5,4, 10, 30));
-        listEnJuego.add(new Deportes(8, "Equipo O", "Equipo P", R.drawable.e_sports, 2019,5,4, 10, 30));
+        listEnJuego.add(new Deportes(8, "Walt Harris", "Travis Browne", R.drawable.ufc, 2019, 04, 25, 17, 00));
+        listEnJuego.add(new Deportes(5, "Chicken Little", "El Gallo Claudio", R.drawable.gallo, 2019, 04, 25, 16, 00));
+        listEnJuego.add(new Deportes(6, "Gallo Campine", "Brahma", R.drawable.gallo, 2019, 04, 25, 17, 00));
+        listEnJuego.add(new Deportes(1, "Toronto Raptors", "Philadelphia 76ers", R.drawable.baloncesto, 2019, 04, 25, 16, 00));
+        listEnJuego.add(new Deportes(4, "Roger Federer", "Alexander Zverev", R.drawable.tenis, 2019, 04, 25, 17, 00));
+        listEnJuego.add(new Deportes(2, "Los Angeles Lakers", "BostonCeltics", R.drawable.baloncesto, 2019, 04, 25, 17, 00));
+        listEnJuego.add(new Deportes(3, "Novak Djokovic", "Rafael Nadal", R.drawable.tenis, 2019, 04, 25, 16, 00));
+        listEnJuego.add(new Deportes(7, "Todd Duffee", "Ben Rothwell", R.drawable.ufc, 2019, 04, 25, 16, 00));
     }
 
     public void addEvents(){

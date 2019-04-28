@@ -22,9 +22,10 @@
     <string name="bienvenido">Bienvenido usuario</string>
     <string name="Aceptar">Aceptar</string>
     <string name="aplicacion">APP</string>
-    
+
     <string name="title_mainmenu">Eventos</string>
     <string name="proximos">PRÓXIMOS</string>
     <string name="populares">POPULARES</string>
     <string name="en_juego">EN JUEGO</string>
+    <string name="seleccionaE">Selecciona los equipos de tu interes</string>
 </resources>

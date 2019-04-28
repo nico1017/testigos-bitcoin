@@ -9,4 +9,6 @@
     <dimen name="ww">400</dimen>
     <dimen name="qqq">500</dimen>
     <dimen name="f">600dp</dimen>
+    <dimen name="log">200</dimen>
+    <dimen name="sa">120</dimen>
 </resources>

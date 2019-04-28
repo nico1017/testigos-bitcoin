@@ -59,56 +59,56 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/futbol"
-                android:textSize="18sp" />
+                android:textSize="24sp" />
 
             <CheckBox
                 android:id="@+id/basketball"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/basketball"
-                android:textSize="18sp" />
+                android:textSize="24sp" />
 
             <CheckBox
                 android:id="@+id/tenis"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/tenis"
-                android:textSize="18sp" />
+                android:textSize="24sp" />
 
             <CheckBox
                 android:id="@+id/carrera"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/Carreracaballos"
-                android:textSize="18sp" />
+                android:textSize="24sp" />
 
             <CheckBox
                 android:id="@+id/Esports"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/Esports"
-                android:textSize="18sp" />
+                android:textSize="24sp" />
 
             <CheckBox
                 android:id="@+id/pelea"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/Peleadegallos"
-                android:textSize="18sp" />
+                android:textSize="24sp" />
 
             <CheckBox
                 android:id="@+id/formula"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/formula1"
-                android:textSize="18sp" />
+                android:textSize="24sp" />
 
             <CheckBox
                 android:id="@+id/ufc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/UFC"
-                android:textSize="18sp" />
+                android:textSize="24sp" />
 
             <Button
                 android:id="@+id/button"

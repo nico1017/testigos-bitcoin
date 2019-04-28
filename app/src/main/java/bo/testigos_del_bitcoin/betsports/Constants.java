@@ -12,4 +12,6 @@ public class Constants {
     public static final String PREF_PASS = "prefPassword";
 
     public static final String KEY_DEPORTE = "deporte";
+
+    public static final String CODIGO_PASAR_A_APUESTA = "pasar a apuesta";
 }

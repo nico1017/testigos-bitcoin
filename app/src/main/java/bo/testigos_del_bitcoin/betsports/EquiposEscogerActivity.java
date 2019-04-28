@@ -1,9 +1,13 @@
 package bo.testigos_del_bitcoin.betsports;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +27,7 @@ public class EquiposEscogerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_equipos_escoger);
         mContext=this;
         equipoArray.add(new equipos(1,"The Strongest" ,R.drawable.futbol ));
-        equipoArray.add(new equipos(2,"8olivar" ,R.drawable.futbol ));
+        equipoArray.add(new equipos(2,"Bolivar" ,R.drawable.futbol ));
         equipoArray.add(new equipos(3,"Barcelona" ,R.drawable.futbol ));
         equipoArray.add(new equipos(4,"Real Madrid" ,R.drawable.futbol ));
         equipoArray.add(new equipos(5,"Juventus" ,R.drawable.futbol ));
@@ -45,5 +49,13 @@ public class EquiposEscogerActivity extends AppCompatActivity {
     }
 
     private void addEvents() {
+        equipos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(mContext, MainMenuActivity.class);
+                Toast.makeText(mContext, "Elecciones: " + equipoArray.get(position).getEquipo(), Toast.LENGTH_LONG).show();
+                startActivity(intent);
+            }
+        });
     }
 }

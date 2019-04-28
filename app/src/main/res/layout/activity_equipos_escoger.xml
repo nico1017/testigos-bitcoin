@@ -18,7 +18,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="@color/morado">
+            android:background="@color/morado"
+            android:paddingStart="@dimen/space_xs">
 
             <TextView
                 android:id="@+id/fut"
@@ -41,8 +42,7 @@
                 android:textAlignment="center"
                 android:textColor="@color/amber"
                 android:textSize="24sp"
-                android:textStyle="bold"
-                tools:text="@string/seleccionaE" />
+                android:textStyle="bold"/>
         </LinearLayout>
 
         <ListView

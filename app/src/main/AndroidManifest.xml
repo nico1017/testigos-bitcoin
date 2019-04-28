@@ -23,6 +23,7 @@
         <activity android:name=".ChooseSportActivity" />
         <activity android:name=".ListaPremiosActivity" />
         <activity android:name=".ListaDeportesActivity" />
+        <activity android:name=".BetActivity"/>
     </application>
 
 </manifest>

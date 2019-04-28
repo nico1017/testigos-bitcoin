@@ -17,7 +17,8 @@
         <ImageView
             android:layout_width="@dimen/toolbar"
             android:layout_height="@dimen/toolbar"
-            android:src="@drawable/icon_hamburger"/>
+            android:src="@drawable/icon_hamburger"
+            android:onClick="goToCategorias"/>
 
         <TextView
             android:id="@+id/dinero"

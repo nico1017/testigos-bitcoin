@@ -24,7 +24,7 @@ import java.util.List;
 import bo.testigos_del_bitcoin.betsports.adapter.CategoriasDeportesAdapter;
 import bo.testigos_del_bitcoin.betsports.model.Deportes;
 
-public class MainMenuActivity extends AppCompatActivity {
+public class MainMenuActivity extends AppCompatActivity implements View.OnClickListener{
 
     private Context mContext;
 
@@ -178,6 +178,14 @@ public class MainMenuActivity extends AppCompatActivity {
     }
     public void goToCategorias(View view){
         Intent intent = new Intent(mContext, CategoriasActivity.class);
+        startActivity(intent);
+    }
+
+    @Override
+    public void onClick(View v) {
+        String url = "https://www.facebook.com/BetSports-852952505043115/?modal=admin_todo_tour";
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse(url));
         startActivity(intent);
     }
 }

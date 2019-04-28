@@ -114,9 +114,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void onClick(View v) {
+        //url del facebook oficial
         String url = "https://www.facebook.com/BetSports-852952505043115/?modal=admin_todo_tour";
         Intent intent = new Intent(Intent.ACTION_VIEW);
         intent.setData(Uri.parse(url));
         startActivity(intent);
+
     }
 }

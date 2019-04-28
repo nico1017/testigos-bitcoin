@@ -10,4 +10,6 @@ public class Constants {
     //SahredPreferences
     public static final String PREF_USER = "prefUsuario";
     public static final String PREF_PASS = "prefPassword";
+
+    public static final String KEY_DEPORTE = "deporte";
 }

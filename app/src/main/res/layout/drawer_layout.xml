@@ -63,7 +63,6 @@
             android:orientation="horizontal">
 
             <LinearLayout
-                android:id="@+id/botonFutbol"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -79,6 +78,7 @@
                     android:src="@drawable/futbol" />
 
                 <TextView
+                    android:id="@+id/Futbol"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="75"
@@ -89,7 +89,6 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/botonGallo"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -105,6 +104,7 @@
                     android:src="@drawable/gallo" />
 
                 <TextView
+                    android:id="@+id/Gallo"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="75"
@@ -123,7 +123,6 @@
             android:orientation="horizontal">
 
             <LinearLayout
-                android:id="@+id/botonBaloncesto"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -139,6 +138,7 @@
                     android:src="@drawable/baloncesto" />
 
                 <TextView
+                    android:id="@+id/Baloncesto"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="75"
@@ -149,7 +149,6 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/botonCaballo"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -165,6 +164,7 @@
                     android:src="@drawable/caballo" />
 
                 <TextView
+                    android:id="@+id/Caballo"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="75"
@@ -183,7 +183,6 @@
             android:orientation="horizontal">
 
             <LinearLayout
-                android:id="@+id/botonTenis"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -199,6 +198,7 @@
                     android:src="@drawable/tenis" />
 
                 <TextView
+                    android:id="@+id/Tenis"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="75"
@@ -209,7 +209,6 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/botonUfc"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -225,6 +224,7 @@
                     android:src="@drawable/ufc" />
 
                 <TextView
+                    android:id="@+id/Ufc"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="75"
@@ -243,7 +243,6 @@
             android:orientation="horizontal">
 
             <LinearLayout
-                android:id="@+id/botonEsports"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -259,6 +258,7 @@
                     android:src="@drawable/e_sports" />
 
                 <TextView
+                    android:id="@+id/Esports"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="75"
@@ -269,7 +269,6 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/botonF1"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -285,6 +284,7 @@
                     android:src="@drawable/f1" />
 
                 <TextView
+                    android:id="@+id/F1"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="75"

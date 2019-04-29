@@ -172,7 +172,7 @@ public class ListaDeportesActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(mContext, BetActivity.class);
                 String seleccionado = new Gson().toJson(deportesArray.get(position));
-                intent.putExtra(Constants.CODIGO_PASAR_A_APUESTA, seleccionado);
+                intent.putExtra(Constants.CODIGO_PASAR_A_APUESTA1, seleccionado);
                 startActivity(intent);
 
             }

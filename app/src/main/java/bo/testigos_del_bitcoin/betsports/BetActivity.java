@@ -54,10 +54,20 @@ public class BetActivity extends AppCompatActivity {
     }
 
     public void reciveData(){
-        Deportes seleccionado = new Gson().fromJson(getIntent().getStringExtra(Constants.CODIGO_PASAR_A_APUESTA), Deportes.class);
+        Deportes seleccionado1 = new Gson().fromJson(getIntent().getStringExtra(Constants.CODIGO_PASAR_A_APUESTA1), Deportes.class);
+        Deportes seleccionado2 = new Gson().fromJson(getIntent().getStringExtra(Constants.CODIGO_PASAR_A_APUESTA2), Deportes.class);
+        Deportes seleccionado3 = new Gson().fromJson(getIntent().getStringExtra(Constants.CODIGO_PASAR_A_APUESTA3), Deportes.class);
 
-        nombreEquipo1.setText(seleccionado.getEquipoUno());
-        nombreEquipo2.setText(seleccionado.getEquipoDos());
+        if (seleccionado1 != null) {
+            nombreEquipo1.setText(seleccionado1.getEquipoUno());
+            nombreEquipo2.setText(seleccionado1.getEquipoDos());
+        }else if(seleccionado2 != null){
+            nombreEquipo1.setText(seleccionado2.getEquipoUno());
+            nombreEquipo2.setText(seleccionado2.getEquipoDos());
+        }else if(seleccionado3 != null){
+            nombreEquipo1.setText(seleccionado3.getEquipoUno());
+            nombreEquipo2.setText(seleccionado3.getEquipoDos());
+        }
     }
 
     public void addEvents(){

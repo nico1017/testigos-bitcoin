@@ -40,7 +40,6 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
     private List<Deportes> listPopulares;
     private List<Deportes> listEnJuego;
 
-    private int listaActual;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +47,6 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
         setContentView(R.layout.activity_main_menu);
 
         mContext = this;
-        listaActual = 1;
 
         createLists();
         initViews();
@@ -119,7 +117,6 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
             public void onClick(View v) {
                 CategoriasDeportesAdapter adapter = new CategoriasDeportesAdapter(mContext, listProximos);
                 listaGeneral.setAdapter(adapter);
-                listaActual = 1;
             }
         });
 
@@ -128,7 +125,6 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
             public void onClick(View v) {
                 CategoriasDeportesAdapter adapter = new CategoriasDeportesAdapter(mContext, listPopulares);
                 listaGeneral.setAdapter(adapter);
-                listaActual = 2;
             }
         });
 
@@ -137,45 +133,32 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
             public void onClick(View v) {
                 CategoriasDeportesAdapter adapter = new CategoriasDeportesAdapter(mContext, listEnJuego);
                 listaGeneral.setAdapter(adapter);
-                listaActual = 3;
             }
         });
 
-        if(listaActual == 1) {
-            listaGeneral.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    Intent intent = new Intent(mContext, BetActivity.class);
-                    String seleccionado = new Gson().toJson(listProximos.get(position));
-                    intent.putExtra(Constants.CODIGO_PASAR_A_APUESTA, seleccionado);
-                    startActivity(intent);
 
-                }
-            });
-        }else if(listaActual == 2){
-            listaGeneral.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    Intent intent = new Intent(mContext, BetActivity.class);
-                    String seleccionado = new Gson().toJson(listPopulares.get(position));
-                    intent.putExtra(Constants.CODIGO_PASAR_A_APUESTA, seleccionado);
-                    startActivity(intent);
+        listaGeneral.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                mostrarLista(1, position);
+            }
+        });
 
-                }
-            });
-        }else if(listaActual == 3){
-            listaGeneral.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    Intent intent = new Intent(mContext, BetActivity.class);
-                    String seleccionado = new Gson().toJson(listEnJuego.get(position));
-                    intent.putExtra(Constants.CODIGO_PASAR_A_APUESTA, seleccionado);
-                    startActivity(intent);
+        listaGeneral.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                mostrarLista(2, position);
+            }
+        });
 
-                }
-            });
-        }
+        listaGeneral.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                mostrarLista(3, position);
+            }
+        });
     }
+
     public void goToCategorias(View view){
         Intent intent = new Intent(mContext, CategoriasActivity.class);
         startActivity(intent);
@@ -187,5 +170,24 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
         Intent intent = new Intent(Intent.ACTION_VIEW);
         intent.setData(Uri.parse(url));
         startActivity(intent);
+    }
+
+    public void mostrarLista(int i, int position){
+        if(i == 1){
+            Intent intent = new Intent(mContext, BetActivity.class);
+            String seleccionado = new Gson().toJson(listProximos.get(position));
+            intent.putExtra(Constants.CODIGO_PASAR_A_APUESTA1, seleccionado);
+            startActivity(intent);
+        }else if(i == 2){
+            Intent intent = new Intent(mContext, BetActivity.class);
+            String seleccionado = new Gson().toJson(listPopulares.get(position));
+            intent.putExtra(Constants.CODIGO_PASAR_A_APUESTA2, seleccionado);
+            startActivity(intent);
+        }else if(i == 3){
+            Intent intent = new Intent(mContext, BetActivity.class);
+            String seleccionado = new Gson().toJson(listEnJuego.get(position));
+            intent.putExtra(Constants.CODIGO_PASAR_A_APUESTA3, seleccionado);
+            startActivity(intent);
+        }
     }
 }

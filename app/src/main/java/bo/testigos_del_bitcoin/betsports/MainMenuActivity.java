@@ -32,6 +32,7 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
     private Button populares;
     private Button juego;
     private ListView listaGeneral;
+    private int listaActual;
     //private Toolbar toolbar;
     //private ActionBarDrawerToggle drawerToggle;
     //private DrawerLayout drawerLayout;
@@ -47,6 +48,7 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
         setContentView(R.layout.activity_main_menu);
 
         mContext = this;
+        listaActual = 1;
 
         createLists();
         initViews();
@@ -92,6 +94,7 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
         listProximos.add(new Deportes(7, "Todd Duffee", "Ben Rothwell", R.drawable.ufc, 2019, 04, 25, 16, 00));
         listProximos.add(new Deportes(8, "Walt Harris", "Travis Browne", R.drawable.ufc, 2019, 04, 25, 17, 00));
 
+        listPopulares.add(new Deportes(0, "hola", "chau", R.drawable.baloncesto, 2019, 04, 25, 16, 00));
         listPopulares.add(new Deportes(1, "Toronto Raptors", "Philadelphia 76ers", R.drawable.baloncesto, 2019, 04, 25, 16, 00));
         listPopulares.add(new Deportes(2, "Los Angeles Lakers", "BostonCeltics", R.drawable.baloncesto, 2019, 04, 25, 17, 00));
         listPopulares.add(new Deportes(3, "Novak Djokovic", "Rafael Nadal", R.drawable.tenis, 2019, 04, 25, 16, 00));
@@ -117,6 +120,7 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
             public void onClick(View v) {
                 CategoriasDeportesAdapter adapter = new CategoriasDeportesAdapter(mContext, listProximos);
                 listaGeneral.setAdapter(adapter);
+                listaActual = 1;
             }
         });
 
@@ -125,6 +129,7 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
             public void onClick(View v) {
                 CategoriasDeportesAdapter adapter = new CategoriasDeportesAdapter(mContext, listPopulares);
                 listaGeneral.setAdapter(adapter);
+                listaActual = 2;
             }
         });
 
@@ -133,6 +138,7 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
             public void onClick(View v) {
                 CategoriasDeportesAdapter adapter = new CategoriasDeportesAdapter(mContext, listEnJuego);
                 listaGeneral.setAdapter(adapter);
+                listaActual = 3;
             }
         });
 
@@ -140,21 +146,13 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
         listaGeneral.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                mostrarLista(1, position);
-            }
-        });
-
-        listaGeneral.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                mostrarLista(2, position);
-            }
-        });
-
-        listaGeneral.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                mostrarLista(3, position);
+                if(listaActual == 1) {
+                    mostrarLista(1, position);
+                }else if(listaActual == 2){
+                    mostrarLista(2, position);
+                }else if(listaActual == 3){
+                    mostrarLista(3, position);
+                }
             }
         });
     }

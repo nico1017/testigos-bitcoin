@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -26,6 +27,7 @@ public class BetActivity extends AppCompatActivity {
     private TextView cuota1;
     private TextView cuota2;
     private EditText cantidad;
+    private ImageView backArrow;
     private Button jugar;
 
     @Override
@@ -47,6 +49,7 @@ public class BetActivity extends AppCompatActivity {
         cuota2 = findViewById(R.id.cuota2);
         cantidad = findViewById(R.id.cantidad);
         jugar = findViewById(R.id.button);
+        backArrow = findViewById(R.id.backArrow);
 
     }
 
@@ -62,6 +65,13 @@ public class BetActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(mContext, "Tu apuesta ha sido registrada", Toast.LENGTH_LONG).show();
+            }
+        });
+
+        backArrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
     }

@@ -148,7 +148,7 @@
                 android:layout_weight="1"
                 android:gravity="center_horizontal"
                 android:textSize="@dimen/title"
-                android:text="200$"/>
+                android:text="200"/>
 
         </LinearLayout>
 

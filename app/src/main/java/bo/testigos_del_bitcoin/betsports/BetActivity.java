@@ -19,12 +19,12 @@ import com.google.gson.Gson;
 import bo.testigos_del_bitcoin.betsports.model.Deportes;
 
 public class BetActivity extends AppCompatActivity {
+    private TextView cuota1;
 
     private Context mContext;
 
     private TextView nombreEquipo1;
     private TextView nombreEquipo2;
-    private TextView cuota1;
     private TextView cuota2;
     private EditText cantidad;
     private ImageView backArrow;

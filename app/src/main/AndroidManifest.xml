@@ -11,7 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CategoriasActivity"/>
+        <activity android:name=".DatosUsuario">
+
+        </activity>
+        <activity android:name=".CategoriasActivity" />
         <activity android:name=".EquiposEscogerActivity" />
         <activity android:name=".MainMenuActivity" />
         <activity android:name=".RegisterActivity" />
@@ -25,7 +28,7 @@
         <activity android:name=".ChooseSportActivity" />
         <activity android:name=".ListaPremiosActivity" />
         <activity android:name=".ListaDeportesActivity" />
-        <activity android:name=".BetActivity"/>
+        <activity android:name=".BetActivity" />
     </application>
 
 </manifest>

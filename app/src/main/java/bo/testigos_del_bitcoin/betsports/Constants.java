@@ -6,6 +6,7 @@ public class Constants {
     public static final int CODIGO_TANSACCION_REGISTER = 420;
     public static final String CODIGO_REGISTRAR_USUARIO = "usuarioRegistrado";
     public static final String CODIGO_PASAR_A_CHOOSE = "pasar choose";
+    public static final String CODIGO_PASAR_A_USUARIO = "pasar usuario";
 
     //SahredPreferences
     public static final String PREF_USER = "prefUsuario";

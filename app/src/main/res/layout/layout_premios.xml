@@ -1,74 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="horizontal"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
     android:padding="8dp">
 
     <ImageView
-        android:id="@+id/premio"
-        android:layout_width="0dp"
-        android:layout_height="60dp"
-        android:layout_weight="25"
-        android:scaleType="centerInside"
-        android:src="@drawable/futbol"/>
-
-    <RelativeLayout
-        android:layout_width="0dp"
+        android:id="@+id/premioImagen"
+        android:layout_width="60dp"
         android:layout_height="wrap_content"
-        android:layout_weight="75"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp">
+        android:src="@drawable/baloncesto"
+        android:adjustViewBounds="true"
+        android:layout_gravity="center"/>
 
-        <RelativeLayout
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center">
+
+        <TextView
+            android:id="@+id/nombrePremio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/contenedor">
+            android:text="Premio"
+            android:textSize="15sp"
+            android:layout_gravity="center"/>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_alignParentTop="true"
-                android:id="@+id/cont1">
+        <TextView
+            android:id="@+id/precioPremio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="precio"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            android:layout_gravity="center"/>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Jugo de "
-                    android:textSize="20sp"/>
+    </LinearLayout>
 
-                <TextView
-                    android:id="@+id/jugoNombre"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Jugo"
-                    android:textSize="20sp"
-                    android:textStyle="bold"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_below="@+id/cont1">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Precio: Bs. "
-                    android:textSize="16sp"/>
-
-                <TextView
-                    android:id="@+id/jugoPrecio"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Precio"
-                    android:textSize="16sp" />
-
-            </LinearLayout>
-        </RelativeLayout>
-    </RelativeLayout>
-
-</RelativeLayout>
+</LinearLayout>

@@ -12,7 +12,6 @@ import android.widget.TextView;
 public class CategoriasActivity extends AppCompatActivity {
 
     private Context mContext;
-    private TextView catDeporte;
     private TextView Futbol;
     private TextView Baloncesto;
     private TextView Tenis;

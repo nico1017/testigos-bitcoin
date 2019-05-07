@@ -10,7 +10,9 @@
     <FrameLayout
         android:id="@+id/frame1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="16dp">
 
         <LinearLayout
             android:id="@+id/principal"
@@ -33,7 +35,7 @@
                 android:layout_marginTop="20dp"
                 android:orientation="horizontal">
 
-                <TextView
+                <EditText
                     android:id="@+id/nombr"
                     android:layout_width="@dimen/tb3"
                     android:layout_height="match_parent"
@@ -45,15 +47,14 @@
                     android:text="TextView"
                     android:textSize="30sp" />
 
-                <ImageButton
+                <ImageView
                     android:id="@+id/ib1"
                     android:layout_width="@dimen/space_lg"
                     android:layout_height="match_parent"
                     android:layout_marginEnd="70dp"
                     android:layout_marginRight="70dp"
                     android:layout_weight="1"
-                    android:background="@color/morado"
-                    app:srcCompat="@drawable/background_botones" />
+                    app:srcCompat="@drawable/checkmark" />
 
             </LinearLayout>
 
@@ -64,7 +65,7 @@
                 android:layout_marginTop="20dp"
                 android:orientation="horizontal">
 
-                <TextView
+                <EditText
                     android:id="@+id/moned"
                     android:layout_width="@dimen/tb3"
                     android:layout_height="match_parent"
@@ -76,15 +77,14 @@
                     android:text="TextView"
                     android:textSize="30sp" />
 
-                <ImageButton
+                <ImageView
                     android:id="@+id/ib2"
-                    android:layout_width="@dimen/space_lg"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_marginEnd="70dp"
-                    android:layout_marginRight="70dp"
-                    android:layout_weight="1"
-                    android:background="@color/morado"
-                    app:srcCompat="@drawable/background_botones" />
+                    android:layout_marginStart="70dp"
+                    android:src="@drawable/moneda"
+                    android:adjustViewBounds="true"/>
 
             </LinearLayout>
         </LinearLayout>

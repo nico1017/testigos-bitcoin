@@ -3,14 +3,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background">
+    android:background="@color/morado">
+
+    <ImageView
+        android:id="@+id/backArrow"
+        android:layout_width="@dimen/toolbar"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:adjustViewBounds="true"
+        app:srcCompat="@drawable/back_arow" />
 
     <ImageView
         android:id="@+id/fotoPerfil"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="75dp"
+        android:layout_marginTop="65dp"
         android:layout_marginBottom="25dp"
         android:src="@drawable/futbol"/>
 
@@ -52,8 +60,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/botones"
-        android:orientation="vertical"
-        android:padding="5dp">
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/Tarjetas"
@@ -64,7 +71,8 @@
             android:text="Tarjetas de Regalo"
             android:textSize="35sp"
             android:onClick="goToTarjetas"
-            android:background="@drawable/background_botones"/>
+            android:background="@drawable/background_botones"
+            android:layout_margin="25dp"/>
 
         <TextView
             android:id="@+id/Electronicos"
@@ -75,7 +83,8 @@
             android:text="Electronicos"
             android:textSize="35sp"
             android:onClick="goToElectronicos"
-            android:background="@drawable/background_botones"/>
+            android:background="@drawable/background_botones"
+            android:layout_margin="25dp"/>
 
         <TextView
             android:id="@+id/Deportivos"
@@ -86,7 +95,8 @@
             android:text="Articulos Deportivos"
             android:textSize="35sp"
             android:onClick="goToDeportivos"
-            android:background="@drawable/background_botones"/>
+            android:background="@drawable/background_botones"
+            android:layout_margin="25dp"/>
 
     </LinearLayout>
 

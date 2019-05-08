@@ -59,11 +59,11 @@ public class ListaPremiosActivity extends AppCompatActivity {
             premCategoria.setText(categoriaElegida);
 
             premiosArray.add(new Premios(1,R.drawable.ps4,2000000,"PS4","PlayStation 4"));
-            premiosArray.add(new Premios(2,R.drawable.xbox,2000000,"PS5","PlayStation 5"));
-            premiosArray.add(new Premios(3,R.drawable.beats,750000,"PS4","PlayStation 4"));
-            premiosArray.add(new Premios(4,R.drawable.nintendo,2000000,"PS5","PlayStation 5"));
-            premiosArray.add(new Premios(5,R.drawable.iphone,2000000,"PS4","PlayStation 4"));
-            premiosArray.add(new Premios(6,R.drawable.laptop,1500000,"PS5","PlayStation 5"));
+            premiosArray.add(new Premios(2,R.drawable.xbox,2000000,"Xbox","PlayStation 5"));
+            premiosArray.add(new Premios(3,R.drawable.beats,750000,"Beats Studio","PlayStation 4"));
+            premiosArray.add(new Premios(4,R.drawable.nintendo,2000000,"Nintendo Switch","PlayStation 5"));
+            premiosArray.add(new Premios(5,R.drawable.iphone,2000000,"iPhone X","PlayStation 4"));
+            premiosArray.add(new Premios(6,R.drawable.laptop,1500000,"Laptop HP","PlayStation 5"));
         }
 
         if(categoriaElegida.equals("Articulos Deportivos")) {

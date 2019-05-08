@@ -6,17 +6,46 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="20dp"
-    android:background="@drawable/background"
+    android:background="@color/morado"
     tools:context=".ListaDeportesActivity">
+
+    <RelativeLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbar"
+        android:background="#673AB7"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/backArrow"
+            android:layout_width="@dimen/toolbar"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="false"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="0dp"
+            app:srcCompat="@drawable/back_arow" />
+
+        <TextView
+            android:id="@+id/dinero"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="center_horizontal"
+            android:text="0$"
+            android:textSize="36sp"
+            android:textColor="@color/white"/>
+
+    </RelativeLayout>
 
     <TextView
         android:id="@+id/categoria"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Categoria"
-        android:textSize="@dimen/title"
+        android:textSize="25sp"
         android:textColor="@color/white"
-        android:background="@color/amber"/>
+        android:background="@color/amber"
+        android:layout_marginTop="10dp"/>
 
     <ListView
         android:id="@+id/eventos"

@@ -20,9 +20,9 @@ public class DatosUsuario extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_datos_usuario);
        ib1 =  findViewById(R.id.ib1);
-       ib2 = findViewById(R.id.ib2);
-       nombr = findViewById(R.id.nombr);
-       moned = findViewById(R.id.moned);
+       //ib2 = findViewById(R.id.ib2);
+       //nombr = findViewById(R.id.nombr);
+       //moned = findViewById(R.id.moned);
         reciveData();
         addEvents();
     }

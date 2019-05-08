@@ -27,6 +27,7 @@ public class EquiposEscogerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_equipos_escoger);
         mContext=this;
+        receiveData();
         if(deporteElegido.equals("futbol")) {
         equipoArray.add(new equipos(1,"The Strongest" ,R.drawable.futbol ));
         equipoArray.add(new equipos(2,"Bolivar" ,R.drawable.futbol ));

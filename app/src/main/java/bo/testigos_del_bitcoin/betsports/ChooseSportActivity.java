@@ -101,32 +101,32 @@ public class ChooseSportActivity extends AppCompatActivity implements View.OnCli
         if(tenisc.isChecked() ){
             prueba+="tenis ";
             Intent intent = new Intent(mContext, EquiposEscogerActivity.class);
-            intent.putExtra(Constants.KEY_DEPORTE, "tenis");
+            intent.putExtra(Constants.KEY_DEPORTE_CHECKBOX, "tenis");
         }
         if(ufcc.isChecked() ){
             prueba+="ufc ";
             Intent intent = new Intent(mContext, EquiposEscogerActivity.class);
-            intent.putExtra(Constants.KEY_DEPORTE, "ufc");
+            intent.putExtra(Constants.KEY_DEPORTE_CHECKBOX, "ufc");
         }
         if(carrerac.isChecked() ){
             prueba+="Carrera de caballos ";
             Intent intent = new Intent(mContext, EquiposEscogerActivity.class);
-            intent.putExtra(Constants.KEY_DEPORTE, "carrera de caballos");
+            intent.putExtra(Constants.KEY_DEPORTE_CHECKBOX, "carrera de caballos");
         }
         if(peleac.isChecked() ){
             prueba+="pelea de gallos ";
             Intent intent = new Intent(mContext, EquiposEscogerActivity.class);
-            intent.putExtra(Constants.KEY_DEPORTE, "pelea de gallos");
+            intent.putExtra(Constants.KEY_DEPORTE_CHECKBOX, "pelea de gallos");
         }
         if(formulac.isChecked() ){
             prueba+="formula 1 ";
             Intent intent = new Intent(mContext, EquiposEscogerActivity.class);
-            intent.putExtra(Constants.KEY_DEPORTE, "formula");
+            intent.putExtra(Constants.KEY_DEPORTE_CHECKBOX, "formula");
         }
         if(espc.isChecked() ){
             prueba+="E-sports ";
             Intent intent = new Intent(mContext, EquiposEscogerActivity.class);
-            intent.putExtra(Constants.KEY_DEPORTE, "e sports");
+            intent.putExtra(Constants.KEY_DEPORTE_CHECKBOX, "e sports");
         }
         Toast.makeText(getApplicationContext(),prueba,Toast.LENGTH_SHORT).show();
         Intent siguiente = new Intent(this,EquiposEscogerActivity.class);

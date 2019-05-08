@@ -3,18 +3,12 @@ package bo.testigos_del_bitcoin.betsports;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toolbar;
 
 import com.google.gson.Gson;
 
@@ -158,7 +152,7 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
     }
 
     public void goToCategorias(View view){
-        Intent intent = new Intent(mContext, CategoriasActivity.class);
+        Intent intent = new Intent(mContext, CategoriasDeportesActivity.class);
         startActivity(intent);
     }
 

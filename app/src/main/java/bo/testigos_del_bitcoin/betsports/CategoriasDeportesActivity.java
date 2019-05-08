@@ -2,14 +2,12 @@ package bo.testigos_del_bitcoin.betsports;
 
 import android.content.Context;
 import android.content.Intent;
-import android.icu.lang.UCharacterCategory;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
-public class CategoriasActivity extends AppCompatActivity {
+public class CategoriasDeportesActivity extends AppCompatActivity {
 
     private Context mContext;
     private TextView Futbol;
@@ -24,7 +22,7 @@ public class CategoriasActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.drawer_layout);
+        setContentView(R.layout.drawer_layout_dep);
         mContext = this;
 
         initViews();
@@ -102,6 +100,11 @@ public class CategoriasActivity extends AppCompatActivity {
 
         Intent intent = new Intent(mContext, ListaDeportesActivity.class);
         intent.putExtra(Constants.KEY_DEPORTE, deporte);
+        startActivity(intent);
+    }
+
+    public void goToPremios(View view){
+        Intent intent = new Intent(mContext, CategoriasPremiosActivity.class);
         startActivity(intent);
     }
 

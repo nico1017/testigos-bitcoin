@@ -2,25 +2,25 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="8dp">
-
-    <ImageView
-        android:id="@+id/premioImagen"
-        android:layout_width="60dp"
-        android:layout_height="wrap_content"
-        android:src="@drawable/baloncesto"
-        android:adjustViewBounds="true"
-        android:layout_gravity="center"/>
+    android:orientation="horizontal">
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_gravity="center">
+        android:padding="8dp">
+
+
+        <ImageView
+            android:id="@+id/premioImagenUno"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baloncesto"
+            android:adjustViewBounds="true"
+            android:layout_gravity="center"/>
 
         <TextView
-            android:id="@+id/nombrePremio"
+            android:id="@+id/nombrePremioUno"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Premio"
@@ -28,7 +28,7 @@
             android:layout_gravity="center"/>
 
         <TextView
-            android:id="@+id/precioPremio"
+            android:id="@+id/precioPremioUno"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="precio"

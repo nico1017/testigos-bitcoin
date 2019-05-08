@@ -17,4 +17,7 @@ public class Constants {
     public static final String CODIGO_PASAR_A_APUESTA1 = "pasar a apuesta1";
     public static final String CODIGO_PASAR_A_APUESTA2 = "pasar a apuesta2";
     public static final String CODIGO_PASAR_A_APUESTA3 = "pasar a apuesta3";
+
+    public static final String DATABASE_NAME = "BetSports.db";
+    public static final int DATABASE_VERSION = 1;
 }

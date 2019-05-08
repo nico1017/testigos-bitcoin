@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 
+import bo.testigos_del_bitcoin.betsports.db.DatabaseHelper;
 import bo.testigos_del_bitcoin.betsports.models.User;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener{
@@ -28,6 +29,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private Button ingresar;
     private Button registrarse;
     private User ususarioRecivido;
+    private DatabaseHelper dbHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +38,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         mContext = this;
         recienRegistrado = false;
+
+        dbHelper = new DatabaseHelper(mContext);
 
         initViews();
         addEvents();
@@ -106,10 +110,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             return false;
         }
 
-        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(mContext);
+        /*SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(mContext);
         String usGuardado = prefs.getString(Constants.PREF_USER, "");
         String passGuardada = prefs.getString(Constants.PREF_PASS, "");
-        return us.equals(usGuardado) && pass.equals(passGuardada);
+        return us.equals(usGuardado) && pass.equals(passGuardada);*/
+
+        return dbHelper.login(us, pass);
     }
 
     @Override

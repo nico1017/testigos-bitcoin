@@ -24,6 +24,7 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 
+import bo.testigos_del_bitcoin.betsports.db.DatabaseHelper;
 import bo.testigos_del_bitcoin.betsports.models.User;
 
 public class RegisterActivity extends AppCompatActivity {
@@ -230,8 +231,12 @@ public class RegisterActivity extends AppCompatActivity {
         usuarioParaEnviar.setPassword(password.getText().toString());
         usuarioParaEnviar.setEdad(Integer.parseInt(edad.getText().toString()));
         usuarioParaEnviar.setEmail(mail.getText().toString());
+        usuarioParaEnviar.setMonedas(100);
 
-        llenarPreferences(usuario.getText().toString(), password.getText().toString());
+        DatabaseHelper dbHelper = new DatabaseHelper(mContext);
+        dbHelper.insert(usuarioParaEnviar);
+
+        //llenarPreferences(usuario.getText().toString(), password.getText().toString());
 
         String json = new Gson().toJson(usuarioParaEnviar);
 

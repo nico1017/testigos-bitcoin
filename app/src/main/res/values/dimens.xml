@@ -11,4 +11,10 @@
     <dimen name="f">600dp</dimen>
     <dimen name="log">200</dimen>
     <dimen name="sa">120</dimen>
+    <dimen name="i">25dp</dimen>
+    <dimen name="iii">10dp</dimen>
+    <dimen name="tb">80dp</dimen>
+    <dimen name="tb1">100dp</dimen>
+    <dimen name="tb2">130</dimen>
+    <dimen name="tb3">150</dimen>
 </resources>

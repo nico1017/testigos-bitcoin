@@ -21,6 +21,7 @@ public class ChooseSportActivity extends AppCompatActivity implements View.OnCli
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.choose_sport);
+        mContext = this;
 
         bienv = findViewById(R.id.bienv);
         aceptar = findViewById(R.id.button);
@@ -88,46 +89,53 @@ public class ChooseSportActivity extends AppCompatActivity implements View.OnCli
     public void onClick(View v) {
         String prueba = "elecciones: ";
         if(basketc.isChecked() ){
-            prueba+="basketball ";
+            prueba+="basketball";
             Intent intent = new Intent(mContext, EquiposEscogerActivity.class);
             intent.putExtra(Constants.KEY_DEPORTE, "basquetball");
             startActivity(intent);
         }
         if(futbolc.isChecked() ){
-            prueba+="futbol ";
+            prueba+="futbol";
             Intent intent = new Intent(mContext, EquiposEscogerActivity.class);
             intent.putExtra(Constants.KEY_DEPORTE, "futbol");
+            startActivity(intent);
 
         }
         if(tenisc.isChecked() ){
-            prueba+="tenis ";
+            prueba+="tenis";
             Intent intent = new Intent(mContext, EquiposEscogerActivity.class);
             intent.putExtra(Constants.KEY_DEPORTE_CHECKBOX, "tenis");
+            startActivity(intent);
         }
         if(ufcc.isChecked() ){
-            prueba+="ufc ";
+            prueba+="ufc";
             Intent intent = new Intent(mContext, EquiposEscogerActivity.class);
             intent.putExtra(Constants.KEY_DEPORTE_CHECKBOX, "ufc");
+            startActivity(intent);
         }
         if(carrerac.isChecked() ){
-            prueba+="Carrera de caballos ";
+            prueba+="Carrera de caballos";
             Intent intent = new Intent(mContext, EquiposEscogerActivity.class);
             intent.putExtra(Constants.KEY_DEPORTE_CHECKBOX, "carrera de caballos");
+            startActivity(intent);
         }
         if(peleac.isChecked() ){
             prueba+="pelea de gallos ";
             Intent intent = new Intent(mContext, EquiposEscogerActivity.class);
             intent.putExtra(Constants.KEY_DEPORTE_CHECKBOX, "pelea de gallos");
+            startActivity(intent);
         }
         if(formulac.isChecked() ){
-            prueba+="formula 1 ";
+            prueba+="formula 1";
             Intent intent = new Intent(mContext, EquiposEscogerActivity.class);
             intent.putExtra(Constants.KEY_DEPORTE_CHECKBOX, "formula");
+            startActivity(intent);
         }
         if(espc.isChecked() ){
             prueba+="E-sports ";
             Intent intent = new Intent(mContext, EquiposEscogerActivity.class);
             intent.putExtra(Constants.KEY_DEPORTE_CHECKBOX, "e sports");
+            startActivity(intent);
         }
         Toast.makeText(getApplicationContext(),prueba,Toast.LENGTH_SHORT).show();
         //Intent siguiente = new Intent(mContext,EquiposEscogerActivity.class);

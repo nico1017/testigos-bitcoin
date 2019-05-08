@@ -43,10 +43,10 @@ public class CategoriasPremiosActivity extends AppCompatActivity {
     }
 
     public void goToElectronicos(View view){
-        String premio = Electronicos.getText().toString();
+        String premio1 = Electronicos.getText().toString();
 
         Intent intent = new Intent(mContext, ListaPremiosActivity.class);
-        intent.putExtra(Constants.KEY_PREMIO, premio);
+        intent.putExtra(Constants.KEY_PREMIO, premio1);
         startActivity(intent);
     }
 

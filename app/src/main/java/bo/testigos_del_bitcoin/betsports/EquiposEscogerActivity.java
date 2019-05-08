@@ -20,6 +20,7 @@ public class EquiposEscogerActivity extends AppCompatActivity {
     private ListView equipos;
     private EquipoEscogerAdapter equiposAdapter;
     private List<equipos> equipoArray = new ArrayList<>();
+    private String categoriaElegida;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +47,10 @@ public class EquiposEscogerActivity extends AppCompatActivity {
 
         equiposAdapter = new EquipoEscogerAdapter(mContext, equipoArray);
         equipos.setAdapter(equiposAdapter);
+    }
+    private void receiveData() {
+        Intent intent = getIntent();
+        categoriaElegida = intent.getStringExtra(Constants.KEY_DEPORTE_CHECKBOX);
     }
 
     private void addEvents() {

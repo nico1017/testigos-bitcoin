@@ -7,6 +7,23 @@
     tools:context=".MainMenuActivity"
     android:background="#D1C4E9">
 
+
+    <!--<android.support.v4.widget.DrawerLayout
+        android:id="@+id/NavigationDrawer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/toolbar"
+            android:background="@color/morado" />-->
+
     <RelativeLayout
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -34,90 +51,104 @@
     </RelativeLayout>
 
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/toolbar"
-            android:orientation="vertical"
-            android:padding="@dimen/space_xl">
-
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/title_mainmenu"
-                android:gravity="center"
-                android:textColor="@color/white"
-                android:textSize="@dimen/super_title"
-                android:paddingBottom="@dimen/space_xl"/>
-
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_below="@id/toolbar"
+                android:padding="@dimen/space_xl">
 
-                <Button
-                    android:id="@+id/proximos"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="33"
-                    android:background="@drawable/background_botones"
-                    android:layout_marginEnd="@dimen/space_xs"
-                    android:layout_marginStart="@dimen/space_xs"
-                    android:text="@string/proximos"
-                    android:textColor="@color/white"/>
-                <Button
-                    android:id="@+id/populares"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="33"
-                    android:background="@drawable/background_botones"
-                    android:layout_marginEnd="@dimen/space_xs"
-                    android:layout_marginStart="@dimen/space_xs"
-                    android:text="@string/populares"
-                    android:textColor="@color/white"/>
-                <Button
-                    android:id="@+id/juego"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="33"
-                    android:background="@drawable/background_botones"
-                    android:layout_marginEnd="@dimen/space_xs"
-                    android:layout_marginStart="@dimen/space_xs"
-                    android:text="@string/en_juego"
-                    android:textColor="@color/white"/>
-            </LinearLayout>
-
-            <ListView
-                android:id="@+id/lista"
-                android:layout_width="match_parent"
-                android:layout_height="430dp"
-                android:layout_marginTop="@dimen/space_lg"/>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/space_lg">
-
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="25"
-                    android:src="@drawable/facebook_icon"/>
 
                 <TextView
-                    android:id="@+id/facebook"
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="75"
-                    android:text="Visita nuestro Facebook"
-                    android:textSize="@dimen/title"
+                    android:text="@string/title_mainmenu"
+                    android:gravity="center"
                     android:textColor="@color/white"
-                    android:textStyle="bold"
-                    android:layout_marginStart="@dimen/space_xs"
-                    android:onClick="onClick"/>
+                    android:textSize="@dimen/super_title"
+                    android:paddingBottom="@dimen/space_xl"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/proximos"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="33"
+                        android:background="@drawable/background_botones"
+                        android:layout_marginEnd="@dimen/space_xs"
+                        android:layout_marginStart="@dimen/space_xs"
+                        android:text="@string/proximos"
+                        android:textColor="@color/white"/>
+
+                    <Button
+                        android:id="@+id/populares"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="33"
+                        android:background="@drawable/background_botones"
+                        android:layout_marginEnd="@dimen/space_xs"
+                        android:layout_marginStart="@dimen/space_xs"
+                        android:text="@string/populares"
+                        android:textColor="@color/white"/>
+                    <Button
+                        android:id="@+id/juego"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="33"
+                        android:background="@drawable/background_botones"
+                        android:layout_marginEnd="@dimen/space_xs"
+                        android:layout_marginStart="@dimen/space_xs"
+                        android:text="@string/en_juego"
+                        android:textColor="@color/white"/>
+                </LinearLayout>
+
+                <ListView
+                    android:id="@+id/lista"
+                    android:layout_width="match_parent"
+                    android:layout_height="430dp"
+                    android:layout_marginTop="@dimen/space_lg"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_xl"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="25"
+                        android:src="@drawable/facebook_icon"/>
+
+                    <TextView
+                        android:id="@+id/facebook"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="75"
+                        android:text="Visita nuestro Facebook"
+                        android:textSize="@dimen/title"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:layout_marginStart="@dimen/space_xs"
+                        android:onClick="onClick"/>
+                 </LinearLayout>
             </LinearLayout>
 
-        </LinearLayout>
+        <!--</LinearLayout>
+
+        <android.support.design.widget.NavigationView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:fitsSystemWindows="true">
+
+            <include layout="@layout/drawer_layout"/>
+
+        </android.support.design.widget.NavigationView>
+    </android.support.v4.widget.DrawerLayout>-->
 
 </RelativeLayout>

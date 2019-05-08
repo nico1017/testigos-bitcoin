@@ -28,4 +28,7 @@
     <string name="populares">POPULARES</string>
     <string name="en_juego">EN JUEGO</string>
     <string name="seleccionaE">Selecciona los equipos de tu interes</string>
+
+    <string name="drawer_opened">Drawer Opened</string>
+    <string name="drawerclosed">Drawer Closed</string>
 </resources>

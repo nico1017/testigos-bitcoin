@@ -12,23 +12,25 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class DatosUsuario extends AppCompatActivity implements View.OnClickListener{
-    private ImageView ib1,ib2;
-    private EditText nombr,moned;
+    private ImageView ib1,clave, moned;
+    private TextView nombr,monedas,contra;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_datos_usuario);
        ib1 =  findViewById(R.id.ib1);
-       //ib2 = findViewById(R.id.ib2);
-       //nombr = findViewById(R.id.nombr);
-       //moned = findViewById(R.id.moned);
+       clave = findViewById(R.id.clave);
+       nombr = findViewById(R.id.nombr);
+       moned = findViewById(R.id.moned);
+        monedas = findViewById(R.id.monedas);
+        contra = findViewById(R.id.contra);
         reciveData();
         addEvents();
     }
     public void addEvents(){
         ib1.setOnClickListener(this);
-        ib2.setOnClickListener(this);
+        //ib2.setOnClickListener(this);
     }
     public void reciveData(){
         Intent intent= getIntent();

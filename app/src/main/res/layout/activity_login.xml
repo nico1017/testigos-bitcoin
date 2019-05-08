@@ -14,7 +14,7 @@
         android:orientation="vertical">
 
         <ImageView
-            android:layout_width="wrap_content"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:src="@drawable/logo_app_final"
             android:adjustViewBounds="true"/>

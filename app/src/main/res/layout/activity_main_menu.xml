@@ -8,8 +8,8 @@
     android:background="#D1C4E9">
 
 
-    <!--<android.support.v4.widget.DrawerLayout
-        android:id="@+id/NavigationDrawer"
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/navigationDrawer"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -19,12 +19,13 @@
             android:orientation="vertical">
 
             <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/toolbar"
-            android:background="@color/morado" />-->
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/morado"
+                android:elevation="5dp"/>
 
-    <RelativeLayout
+    <!--<RelativeLayout
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="@dimen/toolbar"
@@ -48,7 +49,7 @@
             tools:layout_editor_absoluteX="273dp"
             tools:layout_editor_absoluteY="0dp"
             android:textColor="@color/white"/>
-    </RelativeLayout>
+    </RelativeLayout>-->
 
 
             <LinearLayout
@@ -137,8 +138,7 @@
                         android:onClick="onClick"/>
                  </LinearLayout>
             </LinearLayout>
-
-        <!--</LinearLayout>
+        </LinearLayout>
 
         <android.support.design.widget.NavigationView
             android:layout_width="match_parent"
@@ -146,9 +146,10 @@
             android:layout_gravity="start"
             android:fitsSystemWindows="true">
 
-            <include layout="@layout/drawer_layout"/>
+            <include layout="@layout/drawer_layout_dep"/>
 
         </android.support.design.widget.NavigationView>
-    </android.support.v4.widget.DrawerLayout>-->
+
+    </android.support.v4.widget.DrawerLayout>
 
 </RelativeLayout>

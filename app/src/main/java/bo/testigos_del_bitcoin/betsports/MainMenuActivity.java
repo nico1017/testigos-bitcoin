@@ -3,11 +3,16 @@ package bo.testigos_del_bitcoin.betsports;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.support.v4.content.ContextCompat;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.support.v7.widget.Toolbar;
@@ -29,14 +34,23 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
     private Button juego;
     private ListView listaGeneral;
     private int listaActual;
-    //private Toolbar toolbar;
-    //private ActionBarDrawerToggle drawerToggle;
-    //private DrawerLayout drawerLayout;
+    private Toolbar toolbar;
+    private ActionBarDrawerToggle drawerToggle;
+    private DrawerLayout drawerLayout;
 
     private List<Deportes> listProximos;
     private List<Deportes> listPopulares;
     private List<Deportes> listEnJuego;
 
+    private TextView Futbol;
+    private TextView Baloncesto;
+    private TextView Tenis;
+    private TextView E_sports;
+    private TextView Gallos;
+    private TextView Caballos;
+    private TextView Ufc;
+    private TextView F1;
+    private ImageView backArrow;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +64,7 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
         initViews();
         addEvents();
 
-        /*if (this.toolbar != null) {
+        if (this.toolbar != null) {
             // Aqui configuramos nuestro Toolbar, con el ícono del Drawer a la izquierda
             this.toolbar.setTitleTextColor(ContextCompat.getColor(this, R.color.white));
 
@@ -63,7 +77,7 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
                     drawerLayout.openDrawer(GravityCompat.START); // Podemos abrir y cerrar nuestro drawer programáticamente!!
                 }
             });
-        }*/
+        }
     }
 
     public void initViews(){
@@ -71,10 +85,19 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
         populares = findViewById(R.id.populares);
         juego = findViewById(R.id.juego);
         listaGeneral = findViewById(R.id.lista);
-        //toolbar = findViewById(R.id.toolbar);
-        //drawerLayout = findViewById(R.layout.--);
+        toolbar = findViewById(R.id.toolbar);
+        drawerLayout = findViewById(R.id.navigationDrawer);
         CategoriasDeportesAdapter adapter = new CategoriasDeportesAdapter(mContext, listProximos);
         listaGeneral.setAdapter(adapter);
+        Futbol = findViewById(R.id.Futbol);
+        Baloncesto = findViewById(R.id.Baloncesto);
+        Tenis = findViewById(R.id.Tenis);
+        E_sports = findViewById(R.id.Esports);
+        Gallos = findViewById(R.id.Gallo);
+        Caballos = findViewById(R.id.Caballo);
+        Ufc = findViewById(R.id.Ufc);
+        F1 = findViewById(R.id.F1);
+        backArrow = findViewById(R.id.backArrow);
     }
 
     public void createLists(){
@@ -138,7 +161,6 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
             }
         });
 
-
         listaGeneral.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -183,5 +205,75 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
             intent.putExtra(Constants.CODIGO_PASAR_A_APUESTA3, seleccionado);
             startActivity(intent);
         }
+    }
+
+
+    public void goToFutbol(View view){
+        String deporte = Futbol.getText().toString();
+
+        Intent intent = new Intent(mContext, ListaDeportesActivity.class);
+        intent.putExtra(Constants.KEY_DEPORTE, deporte);
+        startActivity(intent);
+    }
+
+    public void goToBaloncesto(View view){
+        String deporte = Baloncesto.getText().toString();
+
+        Intent intent = new Intent(mContext, ListaDeportesActivity.class);
+        intent.putExtra(Constants.KEY_DEPORTE, deporte);
+        startActivity(intent);
+    }
+
+    public void goToTenis(View view){
+        String deporte = Tenis.getText().toString();
+
+        Intent intent = new Intent(mContext, ListaDeportesActivity.class);
+        intent.putExtra(Constants.KEY_DEPORTE, deporte);
+        startActivity(intent);
+    }
+
+    public void goToEsports(View view){
+        String deporte = E_sports.getText().toString();
+
+        Intent intent = new Intent(mContext, ListaDeportesActivity.class);
+        intent.putExtra(Constants.KEY_DEPORTE, deporte);
+        startActivity(intent);
+    }
+
+    public void goToGallo(View view){
+        String deporte = Gallos.getText().toString();
+
+        Intent intent = new Intent(mContext, ListaDeportesActivity.class);
+        intent.putExtra(Constants.KEY_DEPORTE, deporte);
+        startActivity(intent);
+    }
+
+    public void goToCaballo(View view){
+        String deporte = Caballos.getText().toString();
+
+        Intent intent = new Intent(mContext, ListaDeportesActivity.class);
+        intent.putExtra(Constants.KEY_DEPORTE, deporte);
+        startActivity(intent);
+    }
+
+    public void goToUfc(View view){
+        String deporte = Ufc.getText().toString();
+
+        Intent intent = new Intent(mContext, ListaDeportesActivity.class);
+        intent.putExtra(Constants.KEY_DEPORTE, deporte);
+        startActivity(intent);
+    }
+
+    public void goToF1(View view){
+        String deporte = F1.getText().toString();
+
+        Intent intent = new Intent(mContext, ListaDeportesActivity.class);
+        intent.putExtra(Constants.KEY_DEPORTE, deporte);
+        startActivity(intent);
+    }
+
+    public void goToPremios(View view){
+        Intent intent = new Intent(mContext, CategoriasPremiosActivity.class);
+        startActivity(intent);
     }
 }

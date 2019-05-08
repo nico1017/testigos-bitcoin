@@ -91,6 +91,7 @@ public class ChooseSportActivity extends AppCompatActivity implements View.OnCli
             prueba+="basketball ";
             Intent intent = new Intent(mContext, EquiposEscogerActivity.class);
             intent.putExtra(Constants.KEY_DEPORTE, "basquetball");
+            startActivity(intent);
         }
         if(futbolc.isChecked() ){
             prueba+="futbol ";
@@ -129,7 +130,6 @@ public class ChooseSportActivity extends AppCompatActivity implements View.OnCli
             intent.putExtra(Constants.KEY_DEPORTE_CHECKBOX, "e sports");
         }
         Toast.makeText(getApplicationContext(),prueba,Toast.LENGTH_SHORT).show();
-        Intent siguiente = new Intent(mContext,EquiposEscogerActivity.class);
-        startActivity(siguiente);
+
     }
 }

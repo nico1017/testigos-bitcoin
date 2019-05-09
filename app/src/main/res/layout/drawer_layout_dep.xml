@@ -5,13 +5,13 @@
     android:layout_height="match_parent"
     android:background="@color/morado">
 
-    <ImageView
+   <!-- <ImageView
         android:id="@+id/backArrow"
         android:layout_width="@dimen/toolbar"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:adjustViewBounds="true"
-        app:srcCompat="@drawable/back_arow" />
+        app:srcCompat="@drawable/back_arow" />-->
 
     <ImageView
         android:id="@+id/fotoPerfil"
@@ -28,6 +28,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/fotoPerfil"
         android:layout_centerHorizontal="true"
+        android:padding="@dimen/space_lg"
+        android:background="@drawable/background_boton_usuario"
         android:text="Usuario"
         android:textSize="20dp"
         android:layout_marginBottom="10dp"/>
@@ -44,6 +46,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="50"
+            android:background="@drawable/background_botones"
             android:text="Deportes"/>
 
         <Button
@@ -51,6 +54,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="50"
+            android:background="@drawable/background_botones"
             android:text="Premios"
             android:onClick="goToPremios"/>
     </LinearLayout>
@@ -71,10 +75,10 @@
 
             <LinearLayout
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:padding="10dp"
-                android:background="@drawable/background_botones"
+                android:background="@drawable/botones_categorias_background"
                 android:onClick="goToFutbol">
 
                 <ImageView
@@ -97,10 +101,10 @@
 
             <LinearLayout
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:padding="10dp"
-                android:background="@drawable/background_botones"
+                android:background="@drawable/botones_categorias_background"
                 android:onClick="goToGallo">
 
                 <ImageView
@@ -131,10 +135,10 @@
 
             <LinearLayout
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:padding="10dp"
-                android:background="@drawable/background_botones"
+                android:background="@drawable/botones_categorias_background"
                 android:onClick="goToBaloncesto">
 
                 <ImageView
@@ -157,10 +161,10 @@
 
             <LinearLayout
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:padding="10dp"
-                android:background="@drawable/background_botones"
+                android:background="@drawable/botones_categorias_background"
                 android:onClick="goToCaballo">
 
                 <ImageView
@@ -191,10 +195,10 @@
 
             <LinearLayout
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:padding="10dp"
-                android:background="@drawable/background_botones"
+                android:background="@drawable/botones_categorias_background"
                 android:onClick="goToTenis">
 
                 <ImageView
@@ -217,10 +221,10 @@
 
             <LinearLayout
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:padding="10dp"
-                android:background="@drawable/background_botones"
+                android:background="@drawable/botones_categorias_background"
                 android:onClick="goToUfc">
 
                 <ImageView
@@ -251,10 +255,10 @@
 
             <LinearLayout
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:padding="10dp"
-                android:background="@drawable/background_botones"
+                android:background="@drawable/botones_categorias_background"
                 android:onClick="goToEsports">
 
                 <ImageView
@@ -277,10 +281,10 @@
 
             <LinearLayout
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:padding="10dp"
-                android:background="@drawable/background_botones"
+                android:background="@drawable/botones_categorias_background"
                 android:onClick="goToF1">
 
                 <ImageView

@@ -157,6 +157,7 @@ public class ListaDeportesActivity extends AppCompatActivity {
     private void receiveData() {
         Intent intent = getIntent();
         categoriaElegida = intent.getStringExtra(Constants.KEY_DEPORTE);
+
     }
 
     private void initViews() {

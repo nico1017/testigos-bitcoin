@@ -59,38 +59,6 @@
                     app:srcCompat="@drawable/checkmark" />
 
             </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/contrase"
-                android:layout_width="match_parent"
-                android:layout_height="@android:dimen/notification_large_icon_height"
-                android:layout_marginTop="20dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/contra"
-                    android:layout_width="@dimen/tb3"
-                    android:layout_height="match_parent"
-                    android:layout_marginStart="70dp"
-                    android:layout_marginLeft="70dp"
-                    android:layout_marginEnd="0dp"
-                    android:layout_marginRight="0dp"
-                    android:layout_weight="1"
-                    android:text="TextView"
-                    android:textSize="30sp"
-                    android:paddingTop="17dp"
-                    android:textAlignment="center"/>
-
-                <ImageView
-                    android:id="@+id/clave"
-                    android:layout_width="@dimen/space_lg"
-                    android:layout_height="match_parent"
-                    android:layout_marginEnd="70dp"
-                    android:layout_marginRight="70dp"
-                    android:layout_weight="1"
-                    app:srcCompat="@drawable/password1" />
-
-            </LinearLayout>
             <LinearLayout
                 android:id="@+id/Lmoneda"
                 android:layout_width="match_parent"

@@ -5,55 +5,6 @@
     android:layout_height="match_parent"
     android:background="@color/morado">
 
-    <ImageView
-        android:id="@+id/backArrow"
-        android:layout_width="@dimen/toolbar"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:adjustViewBounds="true"
-        app:srcCompat="@drawable/back_arow" />
-
-    <ImageView
-        android:id="@+id/fotoPerfil"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="65dp"
-        android:layout_marginBottom="25dp"
-        android:src="@drawable/futbol"/>
-
-    <Button
-        android:id="@+id/usuario"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/fotoPerfil"
-        android:layout_centerHorizontal="true"
-        android:text="Usuario"
-        android:textSize="20dp"
-        android:layout_marginBottom="10dp"/>
-
-    <LinearLayout
-        android:id="@+id/botones"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_below="@+id/usuario">
-
-        <Button
-            android:id="@+id/catDeportes"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="50"
-            android:text="Deportes"
-            android:onClick="goToDeportes"/>
-
-        <Button
-            android:id="@+id/catPremios"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="50"
-            android:text="Premios"/>
-    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/categorias"
@@ -71,7 +22,7 @@
             android:text="Tarjetas de Regalo"
             android:textSize="35sp"
             android:onClick="goToTarjetas"
-            android:background="@drawable/background_botones"
+            android:background="@drawable/botones_categorias_background"
             android:layout_margin="25dp"/>
 
         <TextView
@@ -83,7 +34,7 @@
             android:text="Electronicos"
             android:textSize="35sp"
             android:onClick="goToElectronicos"
-            android:background="@drawable/background_botones"
+            android:background="@drawable/botones_categorias_background"
             android:layout_margin="25dp"/>
 
         <TextView
@@ -95,7 +46,7 @@
             android:text="Articulos Deportivos"
             android:textSize="35sp"
             android:onClick="goToDeportivos"
-            android:background="@drawable/background_botones"
+            android:background="@drawable/botones_categorias_background"
             android:layout_margin="25dp"/>
 
     </LinearLayout>

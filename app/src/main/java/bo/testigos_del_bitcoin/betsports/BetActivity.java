@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.text.InputType;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -13,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.support.v7.widget.Toolbar;
 
 import com.google.gson.Gson;
 
@@ -30,6 +32,8 @@ public class BetActivity extends AppCompatActivity {
     private ImageView backArrow;
     private Button jugar;
 
+    private Toolbar toolbar;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +42,16 @@ public class BetActivity extends AppCompatActivity {
         mContext = this;
 
         initViews();
+
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
         reciveData();
         addEvents();
     }
@@ -48,9 +62,12 @@ public class BetActivity extends AppCompatActivity {
         cuota1 = findViewById(R.id.cuota1);
         cuota2 = findViewById(R.id.cuota2);
         cantidad = findViewById(R.id.cantidad);
+
+        cantidad.setInputType(InputType.TYPE_CLASS_NUMBER);
+
         jugar = findViewById(R.id.button);
         backArrow = findViewById(R.id.backArrow);
-
+        toolbar = findViewById(R.id.toolbar);
     }
 
     public void reciveData(){
@@ -74,15 +91,24 @@ public class BetActivity extends AppCompatActivity {
         jugar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(mContext, "Tu apuesta ha sido registrada", Toast.LENGTH_LONG).show();
+
+                if(Integer.parseInt(cantidad.getText().toString()) >= 200) {
+                    Toast.makeText(mContext, "Tu apuesta ha sido registrada", Toast.LENGTH_LONG).show();
+                }else if(cantidad.getText().toString().isEmpty()){
+                    cantidad.setText("200");
+                    Toast.makeText(mContext, "La apuesta minima es de 200$", Toast.LENGTH_LONG).show();
+                }else if (Integer.parseInt(cantidad.getText().toString()) < 200){
+                    cantidad.setText("200");
+                    Toast.makeText(mContext, "La apuesta minima es de 200$", Toast.LENGTH_LONG).show();
+                }
             }
         });
 
-        backArrow.setOnClickListener(new View.OnClickListener() {
+        /*backArrow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
             }
-        });
+        });*/
     }
 }

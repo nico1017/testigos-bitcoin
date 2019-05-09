@@ -1,6 +1,6 @@
 package bo.testigos_del_bitcoin.betsports;
 
-import android.content.Context;
+ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.v4.content.ContextCompat;
@@ -52,6 +52,9 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
     private TextView F1;
     private ImageView backArrow;
 
+    private View panelDep;
+    private View panelPrem;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -98,39 +101,42 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
         Ufc = findViewById(R.id.Ufc);
         F1 = findViewById(R.id.F1);
         backArrow = findViewById(R.id.backArrow);
+
+        panelDep = findViewById(R.id.panelDep);
+        panelPrem = findViewById(R.id.panelPremios);
     }
 
     public void createLists(){
         listProximos = new ArrayList<>();
         listPopulares = new ArrayList<>();
         listEnJuego = new ArrayList<>();
-        listProximos.add(new Deportes(1, "Toronto Raptors", "Philadelphia 76ers", R.drawable.baloncesto, 2019, 04, 25, 16, 00));
-        listProximos.add(new Deportes(2, "Los Angeles Lakers", "BostonCeltics", R.drawable.baloncesto, 2019, 04, 25, 17, 00));
-        listProximos.add(new Deportes(3, "Novak Djokovic", "Rafael Nadal", R.drawable.tenis, 2019, 04, 25, 16, 00));
-        listProximos.add(new Deportes(4, "Roger Federer", "Alexander Zverev", R.drawable.tenis, 2019, 04, 25, 17, 00));
-        listProximos.add(new Deportes(5, "Chicken Little", "El Gallo Claudio", R.drawable.gallo, 2019, 04, 25, 16, 00));
-        listProximos.add(new Deportes(6, "Gallo Campine", "Brahma", R.drawable.gallo, 2019, 04, 25, 17, 00));
-        listProximos.add(new Deportes(7, "Todd Duffee", "Ben Rothwell", R.drawable.ufc, 2019, 04, 25, 16, 00));
-        listProximos.add(new Deportes(8, "Walt Harris", "Travis Browne", R.drawable.ufc, 2019, 04, 25, 17, 00));
+        listProximos.add(new Deportes(1, "Toronto Raptors", "Philadelphia 76ers", R.drawable.baloncesto, 2019, 04, 25, "16", "00"));
+        listProximos.add(new Deportes(2, "Los Angeles Lakers", "BostonCeltics", R.drawable.baloncesto, 2019, 04, 25, "17", "00"));
+        listProximos.add(new Deportes(3, "Novak Djokovic", "Rafael Nadal", R.drawable.tenis, 2019, 04, 25, "16", "00"));
+        listProximos.add(new Deportes(4, "Roger Federer", "Alexander Zverev", R.drawable.tenis, 2019, 04, 25, "17", "00"));
+        listProximos.add(new Deportes(5, "Chicken Little", "El Gallo Claudio", R.drawable.gallo, 2019, 04, 25, "16", "00"));
+        listProximos.add(new Deportes(6, "Gallo Campine", "Brahma", R.drawable.gallo, 2019, 04, 25, "17", "00"));
+        listProximos.add(new Deportes(7, "Todd Duffee", "Ben Rothwell", R.drawable.ufc, 2019, 04, 25, "16", "00"));
+        listProximos.add(new Deportes(8, "Walt Harris", "Travis Browne", R.drawable.ufc, 2019, 04, 25, "17", "00"));
 
-        listPopulares.add(new Deportes(0, "hola", "chau", R.drawable.baloncesto, 2019, 04, 25, 16, 00));
-        listPopulares.add(new Deportes(1, "Toronto Raptors", "Philadelphia 76ers", R.drawable.baloncesto, 2019, 04, 25, 16, 00));
-        listPopulares.add(new Deportes(2, "Los Angeles Lakers", "BostonCeltics", R.drawable.baloncesto, 2019, 04, 25, 17, 00));
-        listPopulares.add(new Deportes(3, "Novak Djokovic", "Rafael Nadal", R.drawable.tenis, 2019, 04, 25, 16, 00));
-        listPopulares.add(new Deportes(4, "Roger Federer", "Alexander Zverev", R.drawable.tenis, 2019, 04, 25, 17, 00));
-        listPopulares.add(new Deportes(5, "Chicken Little", "El Gallo Claudio", R.drawable.gallo, 2019, 04, 25, 16, 00));
-        listPopulares.add(new Deportes(6, "Gallo Campine", "Brahma", R.drawable.gallo, 2019, 04, 25, 17, 00));
-        listPopulares.add(new Deportes(7, "Todd Duffee", "Ben Rothwell", R.drawable.ufc, 2019, 04, 25, 16, 00));
-        listPopulares.add(new Deportes(8, "Walt Harris", "Travis Browne", R.drawable.ufc, 2019, 04, 25, 17, 00));
+        listPopulares.add(new Deportes(0, "hola", "chau", R.drawable.baloncesto, 2019, 04, 25, "16", "00"));
+        listPopulares.add(new Deportes(1, "Toronto Raptors", "Philadelphia 76ers", R.drawable.baloncesto, 2019, 04, 25, "16", "00"));
+        listPopulares.add(new Deportes(2, "Los Angeles Lakers", "BostonCeltics", R.drawable.baloncesto, 2019, 04, 25, "17", "00"));
+        listPopulares.add(new Deportes(3, "Novak Djokovic", "Rafael Nadal", R.drawable.tenis, 2019, 04, 25, "16", "00"));
+        listPopulares.add(new Deportes(4, "Roger Federer", "Alexander Zverev", R.drawable.tenis, 2019, 04, 25, "17", "00"));
+        listPopulares.add(new Deportes(5, "Chicken Little", "El Gallo Claudio", R.drawable.gallo, 2019, 04, 25, "16", "00"));
+        listPopulares.add(new Deportes(6, "Gallo Campine", "Brahma", R.drawable.gallo, 2019, 04, 25, "17", "00"));
+        listPopulares.add(new Deportes(7, "Todd Duffee", "Ben Rothwell", R.drawable.ufc, 2019, 04, 25, "16", "00"));
+        listPopulares.add(new Deportes(8, "Walt Harris", "Travis Browne", R.drawable.ufc, 2019, 04, 25, "17", "00"));
 
-        listEnJuego.add(new Deportes(1, "Toronto Raptors", "Philadelphia 76ers", R.drawable.baloncesto, 2019, 04, 25, 16, 00));
-        listEnJuego.add(new Deportes(2, "Los Angeles Lakers", "BostonCeltics", R.drawable.baloncesto, 2019, 04, 25, 17, 00));
-        listEnJuego.add(new Deportes(3, "Novak Djokovic", "Rafael Nadal", R.drawable.tenis, 2019, 04, 25, 16, 00));
-        listEnJuego.add(new Deportes(4, "Roger Federer", "Alexander Zverev", R.drawable.tenis, 2019, 04, 25, 17, 00));
-        listEnJuego.add(new Deportes(5, "Chicken Little", "El Gallo Claudio", R.drawable.gallo, 2019, 04, 25, 16, 00));
-        listEnJuego.add(new Deportes(6, "Gallo Campine", "Brahma", R.drawable.gallo, 2019, 04, 25, 17, 00));
-        listEnJuego.add(new Deportes(7, "Todd Duffee", "Ben Rothwell", R.drawable.ufc, 2019, 04, 25, 16, 00));
-        listEnJuego.add(new Deportes(8, "Walt Harris", "Travis Browne", R.drawable.ufc, 2019, 04, 25, 17, 00));
+        listEnJuego.add(new Deportes(1, "Toronto Raptors", "Philadelphia 76ers", R.drawable.baloncesto, 2019, 04, 25, "16", "00"));
+        listEnJuego.add(new Deportes(2, "Los Angeles Lakers", "BostonCeltics", R.drawable.baloncesto, 2019, 04, 25, "17", "00"));
+        listEnJuego.add(new Deportes(3, "Novak Djokovic", "Rafael Nadal", R.drawable.tenis, 2019, 04, 25, "16", "00"));
+        listEnJuego.add(new Deportes(4, "Roger Federer", "Alexander Zverev", R.drawable.tenis, 2019, 04, 25, "17", "00"));
+        listEnJuego.add(new Deportes(5, "Chicken Little", "El Gallo Claudio", R.drawable.gallo, 2019, 04, 25, "16", "00"));
+        listEnJuego.add(new Deportes(6, "Gallo Campine", "Brahma", R.drawable.gallo, 2019, 04, 25, "17", "00"));
+        listEnJuego.add(new Deportes(7, "Todd Duffee", "Ben Rothwell", R.drawable.ufc, 2019, 04, 25, "16", "00"));
+        listEnJuego.add(new Deportes(8, "Walt Harris", "Travis Browne", R.drawable.ufc, 2019, 04, 25, "17", "00"));
     }
 
     public void addEvents(){
@@ -275,5 +281,15 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
     public void goToPremios(View view){
         Intent intent = new Intent(mContext, CategoriasPremiosActivity.class);
         startActivity(intent);
+    }
+
+    public void showDeportes(View view){
+        panelDep.setVisibility(View.VISIBLE);
+        panelPrem.setVisibility(View.GONE);
+    }
+
+    public void showPremios(View view){
+        panelDep.setVisibility(View.GONE);
+        panelPrem.setVisibility(View.VISIBLE);
     }
 }

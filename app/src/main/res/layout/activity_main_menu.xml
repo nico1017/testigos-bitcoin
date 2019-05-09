@@ -162,8 +162,68 @@
             android:layout_gravity="start"
             android:fitsSystemWindows="true">
 
-            <include layout="@layout/drawer_layout_dep"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/morado">
 
+
+                <ImageView
+                    android:id="@+id/fotoPerfil"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="65dp"
+                    android:layout_marginBottom="25dp"
+                    android:src="@drawable/futbol"/>
+
+                <Button
+                    android:id="@+id/usuario"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/fotoPerfil"
+                    android:layout_centerHorizontal="true"
+                    android:padding="@dimen/space_lg"
+                    android:background="@drawable/background_boton_usuario"
+                    android:text="Usuario"
+                    android:textSize="20dp"
+                    android:layout_marginBottom="10dp"/>
+
+                <LinearLayout
+                    android:id="@+id/botones"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_below="@+id/usuario">
+
+                    <Button
+                        android:id="@+id/catDeportes"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="50"
+                        android:background="@drawable/background_botones"
+                        android:text="Deportes"
+                        android:onClick="showDeportes"/>
+
+                    <Button
+                        android:id="@+id/catPremios"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="50"
+                        android:background="@drawable/background_botones"
+                        android:text="Premios"
+                        android:onClick="showPremios"/>
+                </LinearLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@id/botones">
+                    <include android:id="@+id/panelDep" layout="@layout/drawer_layout_dep" />
+                    <include android:id="@+id/panelPremios" layout="@layout/drawer_layout_prem"
+                        android:visibility="gone"/>
+                </FrameLayout>
+            </RelativeLayout>
         </android.support.design.widget.NavigationView>
 
     </android.support.v4.widget.DrawerLayout>

@@ -26,12 +26,12 @@ public class Deportes {
     private int dia;
 
     @Expose
-    private int hora;
+    private String hora;
 
     @Expose
-    private int minutos;
+    private String minutos;
 
-    public Deportes(int id, String equipoUno, String equipoDos, int logo, int anio, int mes, int dia, int hora, int minutos){
+    public Deportes(int id, String equipoUno, String equipoDos, int logo, int anio, int mes, int dia, String hora, String minutos){
         this.id = id;
         this.equipoUno = equipoUno;
         this.equipoDos = equipoDos;
@@ -99,19 +99,19 @@ public class Deportes {
         this.dia = dia;
     }
 
-    public int getHora() {
+    public String getHora() {
         return hora;
     }
 
-    public void setHora(int hora) {
+    public void setHora(String hora) {
         this.hora = hora;
     }
 
-    public int getMinutos() {
+    public String getMinutos() {
         return minutos;
     }
 
-    public void setMinutos(int minutos) {
+    public void setMinutos(String minutos) {
         this.minutos = minutos;
     }
 }

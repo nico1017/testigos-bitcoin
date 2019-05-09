@@ -27,8 +27,9 @@ public class EquiposEscogerActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        fut = findViewById(R.id.fut);
+
         setContentView(R.layout.activity_equipos_escoger);
+        fut = findViewById(R.id.fut);
         mContext=this;
         receiveData();
         if(deporteElegido.equals("futbol")) {

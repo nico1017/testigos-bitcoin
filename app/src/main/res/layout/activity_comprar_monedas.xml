@@ -78,6 +78,19 @@
                 android:textColor="@color/white"
                 android:textSize="30dp"
                 />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="70dp"
+                android:background="@drawable/background_botones"
+                android:padding="@dimen/space_lg"
+                android:paddingTop="80dp"
+                android:text="COMPRAR"
+                android:textColor="@color/white"
+                android:textSize="@dimen/title" />
         </LinearLayout>
 
     </LinearLayout>

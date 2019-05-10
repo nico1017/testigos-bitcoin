@@ -9,6 +9,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.support.v7.widget.Toolbar;
 
 import com.google.gson.Gson;
 
@@ -29,6 +30,8 @@ public class ListaDeportesActivity extends AppCompatActivity {
     private CategoriasDeportesAdapter deportesAdapter;
 
     private List<Deportes> deportesArray = new ArrayList<>();
+
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -152,6 +155,15 @@ public class ListaDeportesActivity extends AppCompatActivity {
 
         initViews();
         addEvents();
+
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
     private void receiveData() {
@@ -165,6 +177,8 @@ public class ListaDeportesActivity extends AppCompatActivity {
 
         deportesAdapter = new CategoriasDeportesAdapter(mContext, deportesArray);
         deportes.setAdapter(deportesAdapter);
+
+        toolbar = findViewById(R.id.toolbar);
     }
 
     private void addEvents() {

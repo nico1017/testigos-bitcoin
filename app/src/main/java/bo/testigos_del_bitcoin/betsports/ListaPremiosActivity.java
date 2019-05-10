@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.TextView;
+import android.support.v7.widget.Toolbar;
 
 import com.google.gson.Gson;
 
@@ -15,8 +16,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import bo.testigos_del_bitcoin.betsports.adapter.CategoriasPremiosAdapter;
-import bo.testigos_del_bitcoin.betsports.model.Deportes;
 import bo.testigos_del_bitcoin.betsports.model.Premios;
+
 
 public class ListaPremiosActivity extends AppCompatActivity {
 
@@ -29,6 +30,8 @@ public class ListaPremiosActivity extends AppCompatActivity {
     private CategoriasPremiosAdapter premiosAdapter;
 
     private List<Premios> premiosArray = new ArrayList<>();
+
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,6 +85,15 @@ public class ListaPremiosActivity extends AppCompatActivity {
 
         initViews();
         //addEvents();
+
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
     private void receiveData() {
@@ -94,6 +106,8 @@ public class ListaPremiosActivity extends AppCompatActivity {
 
         premiosAdapter = new CategoriasPremiosAdapter(mContext, premiosArray);
         premios.setAdapter(premiosAdapter);
+
+        toolbar = findViewById(R.id.toolbar);
     }
 
     /*private void addEvents() {

@@ -55,6 +55,10 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
     private View panelDep;
     private View panelPrem;
 
+    private TextView TarjetasRegalo;
+    private TextView Electronicos;
+    private TextView ArticulosDeportivos;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -104,6 +108,10 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
 
         panelDep = findViewById(R.id.panelDep);
         panelPrem = findViewById(R.id.panelPremios);
+
+        TarjetasRegalo = findViewById(R.id.Tarjetas);
+        Electronicos = findViewById(R.id.Electronicos);
+        ArticulosDeportivos = findViewById(R.id.Deportivos);
     }
 
     public void createLists(){
@@ -278,11 +286,29 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
         startActivity(intent);
     }
 
-    public void goToPremios(View view){
-        Intent intent = new Intent(mContext, CategoriasPremiosActivity.class);
+    public void goToTarjetas(View view){
+        String premio = TarjetasRegalo.getText().toString();
+
+        Intent intent = new Intent(mContext, ListaPremiosActivity.class);
+        intent.putExtra(Constants.KEY_PREMIO, premio);
         startActivity(intent);
     }
 
+    public void goToElectronicos(View view){
+        String premio1 = Electronicos.getText().toString();
+
+        Intent intent = new Intent(mContext, ListaPremiosActivity.class);
+        intent.putExtra(Constants.KEY_PREMIO, premio1);
+        startActivity(intent);
+    }
+
+    public void goToDeportivos(View view){
+        String premio = ArticulosDeportivos.getText().toString();
+
+        Intent intent = new Intent(mContext, ListaPremiosActivity.class);
+        intent.putExtra(Constants.KEY_PREMIO, premio);
+        startActivity(intent);
+    }
     public void showDeportes(View view){
         panelDep.setVisibility(View.VISIBLE);
         panelPrem.setVisibility(View.GONE);

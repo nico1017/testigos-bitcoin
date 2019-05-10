@@ -9,5 +9,7 @@
     <color name="morado">#673AB7</color>
     <color name="amber">#FFC107</color>
 
+    <color name="light_background">#D1C4E9</color>
+
 
 </resources>

@@ -16,11 +16,11 @@
         <TextView
             android:id="@+id/Tarjetas"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_height="wrap_content"
             android:gravity="center"
             android:text="Tarjetas de Regalo"
             android:textSize="35sp"
+            android:padding="@dimen/space_xl"
             android:onClick="goToTarjetas"
             android:background="@drawable/botones_categorias_background"
             android:layout_margin="25dp"/>
@@ -28,11 +28,11 @@
         <TextView
             android:id="@+id/Electronicos"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_height="wrap_content"
             android:gravity="center"
             android:text="Electronicos"
             android:textSize="35sp"
+            android:padding="@dimen/space_xl"
             android:onClick="goToElectronicos"
             android:background="@drawable/botones_categorias_background"
             android:layout_margin="25dp"/>
@@ -40,11 +40,11 @@
         <TextView
             android:id="@+id/Deportivos"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_height="wrap_content"
             android:gravity="center"
             android:text="Articulos Deportivos"
             android:textSize="35sp"
+            android:padding="@dimen/space_xl"
             android:onClick="goToDeportivos"
             android:background="@drawable/botones_categorias_background"
             android:layout_margin="25dp"/>

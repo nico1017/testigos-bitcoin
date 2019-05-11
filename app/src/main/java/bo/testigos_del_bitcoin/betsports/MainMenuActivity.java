@@ -23,11 +23,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import bo.testigos_del_bitcoin.betsports.adapter.CategoriasDeportesAdapter;
-import bo.testigos_del_bitcoin.betsports.model.Deportes;
+ import bo.testigos_del_bitcoin.betsports.db.DatabaseHelper;
+ import bo.testigos_del_bitcoin.betsports.model.Deportes;
 
 public class MainMenuActivity extends AppCompatActivity implements View.OnClickListener{
 
     private Context mContext;
+    private String usuarioConectado;
 
     private Button proximos;
     private Button populares;
@@ -50,7 +52,6 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
     private TextView Caballos;
     private TextView Ufc;
     private TextView F1;
-    private ImageView backArrow;
 
     private View panelDep;
     private View panelPrem;
@@ -58,6 +59,9 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
     private TextView TarjetasRegalo;
     private TextView Electronicos;
     private TextView ArticulosDeportivos;
+
+    private TextView cantidad_monedas;
+    private DatabaseHelper dbhelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,6 +74,12 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
         createLists();
         initViews();
         addEvents();
+
+        Intent intent = getIntent();
+        usuarioConectado = intent.getStringExtra(Constants.CODIGO_PASAR_A_MAINMENU);
+
+        dbhelper = new DatabaseHelper(mContext);
+        cantidad_monedas.setText(dbhelper.getMonedasDeUsuario(usuarioConectado) + "$");
 
         if (this.toolbar != null) {
             // Aqui configuramos nuestro Toolbar, con el ícono del Drawer a la izquierda
@@ -104,7 +114,6 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
         Caballos = findViewById(R.id.Caballo);
         Ufc = findViewById(R.id.Ufc);
         F1 = findViewById(R.id.F1);
-        backArrow = findViewById(R.id.backArrow);
 
         panelDep = findViewById(R.id.panelDep);
         panelPrem = findViewById(R.id.panelPremios);
@@ -112,6 +121,7 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
         TarjetasRegalo = findViewById(R.id.Tarjetas);
         Electronicos = findViewById(R.id.Electronicos);
         ArticulosDeportivos = findViewById(R.id.Deportivos);
+        cantidad_monedas = findViewById(R.id.cantidad_monedas);
     }
 
     public void createLists(){
@@ -309,6 +319,13 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
         intent.putExtra(Constants.KEY_PREMIO, premio);
         startActivity(intent);
     }
+
+    public void goToDatosUsuario(View view){
+        Intent intent = new Intent(mContext, DatosUsuario.class);
+        intent.putExtra(Constants.CODIGO_PASAR_A_DATOSUSUARIO, usuarioConectado);
+        startActivity(intent);
+    }
+
     public void showDeportes(View view){
         panelDep.setVisibility(View.VISIBLE);
         panelPrem.setVisibility(View.GONE);

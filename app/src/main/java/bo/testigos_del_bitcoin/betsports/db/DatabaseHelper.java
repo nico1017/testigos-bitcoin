@@ -42,4 +42,15 @@ public class DatabaseHelper {
             return false;
         }
     }
+
+    public int getMonedasDeUsuario(String usuario){
+        String[] params = new String[1];
+        params[0] = usuario;
+        Cursor cursor = this.mDatabase.rawQuery("SELECT monedas FROM usuarios WHERE usuario = ?", params);
+        if(cursor.moveToFirst()) {
+            return cursor.getInt(cursor.getColumnIndex("monedas"));
+        }else{
+            return 0;
+        }
+    }
 }

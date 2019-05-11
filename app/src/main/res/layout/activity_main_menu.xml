@@ -33,7 +33,7 @@
                         android:id="@+id/cantidad_monedas"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="0$"
+                        tools:text="0$"
                         android:layout_alignParentEnd="true"
                         android:textSize="@dimen/super_title"
                         android:layout_marginEnd="@dimen/space_md"
@@ -178,7 +178,7 @@
                     android:src="@drawable/futbol"/>
 
                 <Button
-                    android:id="@+id/usuario"
+                    android:id="@+id/usuarioBoton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/fotoPerfil"
@@ -187,14 +187,15 @@
                     android:background="@drawable/background_boton_usuario"
                     android:text="Usuario"
                     android:textSize="20dp"
-                    android:layout_marginBottom="10dp"/>
+                    android:layout_marginBottom="10dp"
+                    android:onClick="goToDatosUsuario"/>
 
                 <LinearLayout
                     android:id="@+id/botones"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:layout_below="@+id/usuario">
+                    android:layout_below="@+id/usuarioBoton">
 
                     <Button
                         android:id="@+id/catDeportes"

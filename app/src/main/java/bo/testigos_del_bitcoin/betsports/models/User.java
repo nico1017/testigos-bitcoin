@@ -22,7 +22,7 @@ public class User {
     private String email;
 
     @Expose
-    private int monedas;
+    private int monedas = 2000;
 
     public String getNombreUsuario() {
         return nombreUsuario;

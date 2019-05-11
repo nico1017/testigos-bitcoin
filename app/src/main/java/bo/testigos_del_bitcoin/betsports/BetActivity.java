@@ -31,6 +31,7 @@ public class BetActivity extends AppCompatActivity {
     private EditText cantidad;
     private ImageView backArrow;
     private Button jugar;
+    private TextView gananciText;
 
     private Toolbar toolbar;
 
@@ -62,6 +63,7 @@ public class BetActivity extends AppCompatActivity {
         cuota1 = findViewById(R.id.cuota1);
         cuota2 = findViewById(R.id.cuota2);
         cantidad = findViewById(R.id.cantidad);
+        gananciText = findViewById(R.id.gananciaText);
 
         cantidad.setInputType(InputType.TYPE_CLASS_NUMBER);
 
@@ -92,23 +94,16 @@ public class BetActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if(Integer.parseInt(cantidad.getText().toString()) >= 200) {
-                    Toast.makeText(mContext, "Tu apuesta ha sido registrada", Toast.LENGTH_LONG).show();
-                }else if(cantidad.getText().toString().isEmpty()){
+                if(cantidad.getText().toString().isEmpty()){
                     cantidad.setText("200");
                     Toast.makeText(mContext, "La apuesta minima es de 200$", Toast.LENGTH_LONG).show();
-                }else if (Integer.parseInt(cantidad.getText().toString()) < 200){
+                }else if(Integer.parseInt(cantidad.getText().toString()) >= 200) {
+                    Toast.makeText(mContext, "Tu apuesta ha sido registrada", Toast.LENGTH_LONG).show();
+                }else {
                     cantidad.setText("200");
                     Toast.makeText(mContext, "La apuesta minima es de 200$", Toast.LENGTH_LONG).show();
                 }
             }
         });
-
-        /*backArrow.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });*/
     }
 }

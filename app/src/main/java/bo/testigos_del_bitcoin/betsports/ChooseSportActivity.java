@@ -13,9 +13,11 @@ import android.widget.Toast;
 
 public class ChooseSportActivity extends AppCompatActivity implements View.OnClickListener{
     private Context mContext;
-    CheckBox futbolc,basketc,formulac,carrerac,ufcc,peleac,tenisc, espc;
+    private CheckBox futbolc,basketc,formulac,carrerac,ufcc,peleac,tenisc, espc;
     private Button aceptar;
     private TextView bienv;
+
+    private String nombreUsuario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +46,7 @@ public class ChooseSportActivity extends AppCompatActivity implements View.OnCli
 
     public void reciveData(){
         Intent intent= getIntent();
-        String nombreUsuario = intent.getStringExtra(Constants.CODIGO_PASAR_A_CHOOSE);
+        nombreUsuario = intent.getStringExtra(Constants.CODIGO_PASAR_A_CHOOSE);
 
         bienv.setText("Bienvenido " + nombreUsuario);
     }
@@ -92,12 +94,14 @@ public class ChooseSportActivity extends AppCompatActivity implements View.OnCli
             prueba+="basketball";
             Intent intent = new Intent(mContext, EquiposEscogerActivity.class);
             intent.putExtra(Constants.KEY_DEPORTE, "basquetball");
+            intent.putExtra(Constants.CODIGO_PASAR_A_MAINMENU, nombreUsuario);
             startActivity(intent);
         }
         if(futbolc.isChecked() ){
             prueba+="futbol";
             Intent intent = new Intent(mContext, EquiposEscogerActivity.class);
             intent.putExtra(Constants.KEY_DEPORTE, "futbol");
+            intent.putExtra(Constants.CODIGO_PASAR_A_MAINMENU, nombreUsuario);
             startActivity(intent);
 
         }
@@ -105,36 +109,42 @@ public class ChooseSportActivity extends AppCompatActivity implements View.OnCli
             prueba+="tenis";
             Intent intent = new Intent(mContext, EquiposEscogerActivity.class);
             intent.putExtra(Constants.KEY_DEPORTE_CHECKBOX, "tenis");
+            intent.putExtra(Constants.CODIGO_PASAR_A_MAINMENU, nombreUsuario);
             startActivity(intent);
         }
         if(ufcc.isChecked() ){
             prueba+="ufc";
             Intent intent = new Intent(mContext, EquiposEscogerActivity.class);
             intent.putExtra(Constants.KEY_DEPORTE_CHECKBOX, "ufc");
+            intent.putExtra(Constants.CODIGO_PASAR_A_MAINMENU, nombreUsuario);
             startActivity(intent);
         }
         if(carrerac.isChecked() ){
             prueba+="Carrera de caballos";
             Intent intent = new Intent(mContext, EquiposEscogerActivity.class);
             intent.putExtra(Constants.KEY_DEPORTE_CHECKBOX, "carrera de caballos");
+            intent.putExtra(Constants.CODIGO_PASAR_A_MAINMENU, nombreUsuario);
             startActivity(intent);
         }
         if(peleac.isChecked() ){
             prueba+="pelea de gallos ";
             Intent intent = new Intent(mContext, EquiposEscogerActivity.class);
             intent.putExtra(Constants.KEY_DEPORTE_CHECKBOX, "pelea de gallos");
+            intent.putExtra(Constants.CODIGO_PASAR_A_MAINMENU, nombreUsuario);
             startActivity(intent);
         }
         if(formulac.isChecked() ){
             prueba+="formula 1";
             Intent intent = new Intent(mContext, EquiposEscogerActivity.class);
             intent.putExtra(Constants.KEY_DEPORTE_CHECKBOX, "formula");
+            intent.putExtra(Constants.CODIGO_PASAR_A_MAINMENU, nombreUsuario);
             startActivity(intent);
         }
         if(espc.isChecked() ){
             prueba+="E-sports ";
             Intent intent = new Intent(mContext, EquiposEscogerActivity.class);
             intent.putExtra(Constants.KEY_DEPORTE_CHECKBOX, "e sports");
+            intent.putExtra(Constants.CODIGO_PASAR_A_MAINMENU, nombreUsuario);
             startActivity(intent);
         }
         Toast.makeText(getApplicationContext(),prueba,Toast.LENGTH_SHORT).show();

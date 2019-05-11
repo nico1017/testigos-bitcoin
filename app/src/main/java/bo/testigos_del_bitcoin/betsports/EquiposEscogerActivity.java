@@ -23,6 +23,7 @@ public class EquiposEscogerActivity extends AppCompatActivity {
     private List<equipos> equipoArray = new ArrayList<>();
     private String deporteElegido;
     private TextView fut;
+    private String usuarioConectado;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -170,6 +171,7 @@ public class EquiposEscogerActivity extends AppCompatActivity {
     private void receiveData() {
         Intent intent = getIntent();
         deporteElegido = intent.getStringExtra(Constants.KEY_DEPORTE_CHECKBOX);
+        usuarioConectado = intent.getStringExtra(Constants.CODIGO_PASAR_A_MAINMENU);
         fut.setText(" " + deporteElegido);
 
     }
@@ -179,6 +181,7 @@ public class EquiposEscogerActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(mContext, MainMenuActivity.class);
+                intent.putExtra(Constants.CODIGO_PASAR_A_MAINMENU, usuarioConectado);
                 Toast.makeText(mContext, "Elecciones: " + equipoArray.get(position).getEquipo(), Toast.LENGTH_LONG).show();
                 startActivity(intent);
             }

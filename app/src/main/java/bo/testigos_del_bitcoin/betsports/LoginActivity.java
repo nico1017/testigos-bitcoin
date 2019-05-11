@@ -63,11 +63,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     if(recienRegistrado) {
                         //Toast.makeText(mContext, "ChooseSports", Toast.LENGTH_LONG).show();
                         Intent intent = new Intent(mContext, ChooseSportActivity.class);
-                        intent.putExtra(Constants.CODIGO_PASAR_A_CHOOSE, ususarioRecivido.getNombreUsuario());
+                        intent.putExtra(Constants.CODIGO_PASAR_A_CHOOSE, usVerficar);
                         startActivity(intent);
+
                     }else {
                         //Toast.makeText(mContext, "MainMenu", Toast.LENGTH_LONG).show();
                         Intent intent = new Intent(mContext, MainMenuActivity.class);
+                        intent.putExtra(Constants.CODIGO_PASAR_A_MAINMENU, usVerficar);
                         startActivity(intent);
                     }
                 }else{

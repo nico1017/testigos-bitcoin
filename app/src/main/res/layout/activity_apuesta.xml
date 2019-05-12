@@ -20,7 +20,16 @@
                 android:id="@+id/cantidad_monedas"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0$"
+                android:text="0"
+                android:layout_toStartOf="@+id/signo"
+                android:textSize="@dimen/super_title"
+                android:textColor="@color/white"/>
+
+            <TextView
+                android:id="@+id/signo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$"
                 android:layout_alignParentEnd="true"
                 android:textSize="@dimen/super_title"
                 android:layout_marginEnd="@dimen/space_md"

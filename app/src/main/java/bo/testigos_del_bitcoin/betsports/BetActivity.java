@@ -16,9 +16,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.support.v7.widget.Toolbar;
 
+//import com.Timer_con_countdown.Timer_con_countdown;
 import com.google.gson.Gson;
 
 import bo.testigos_del_bitcoin.betsports.model.Deportes;
+
+import android.os.CountDownTimer;
 
 public class BetActivity extends AppCompatActivity {
     private TextView cuota1;
@@ -32,8 +35,12 @@ public class BetActivity extends AppCompatActivity {
     private ImageView backArrow;
     private Button jugar;
     private TextView gananciText;
+    private TextView monedas;
 
     private Toolbar toolbar;
+
+
+    Contador counter;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -64,6 +71,7 @@ public class BetActivity extends AppCompatActivity {
         cuota2 = findViewById(R.id.cuota2);
         cantidad = findViewById(R.id.cantidad);
         gananciText = findViewById(R.id.gananciaText);
+        monedas = findViewById(R.id.cantidad_monedas);
 
         cantidad.setInputType(InputType.TYPE_CLASS_NUMBER);
 
@@ -103,7 +111,40 @@ public class BetActivity extends AppCompatActivity {
                     cantidad.setText("200");
                     Toast.makeText(mContext, "La apuesta minima es de 200$", Toast.LENGTH_LONG).show();
                 }
+
+                counter = new Contador(10000,1000);
+
+                counter.start();
             }
         });
+    }
+
+    public class Contador extends CountDownTimer{
+
+        public Contador(long millisInFuture, long countDownInterval) {
+            super(millisInFuture, countDownInterval);
+        }
+
+        @Override
+        public void onFinish() {
+            simularJuego();
+        }
+
+        @Override
+        public void onTick(long millisUntilFinished) {
+            simularJuego();
+        }
+
+    }
+
+    public void simularJuego(){
+        int posibilidad;
+        posibilidad = (int) (Math.random() * 2);
+        if (posibilidad == 0){
+            monedas.setText("200");
+            Toast.makeText(mContext, "Ganaste tu apuesta!", Toast.LENGTH_LONG).show();
+        }else{
+            Toast.makeText(mContext, "Perdiste tu apuesta", Toast.LENGTH_LONG).show();
+        }
     }
 }

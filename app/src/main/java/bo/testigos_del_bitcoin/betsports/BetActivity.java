@@ -171,7 +171,7 @@ public class BetActivity extends AppCompatActivity {
             monedas.setText(String.valueOf(total+cantActual));
             Toast.makeText(mContext, "Ganaste tu apuesta!", Toast.LENGTH_LONG).show();
         }else{
-            Toast.makeText(mContext, "Perdiste tu apuesta", Toast.LENGTH_LONG).show();
+            Toast.makeText(mContext, "Perdiste tu apuesta, moral nomas choco", Toast.LENGTH_LONG).show();
         }
     }
 }

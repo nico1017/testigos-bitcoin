@@ -231,7 +231,7 @@ public class RegisterActivity extends AppCompatActivity {
         usuarioParaEnviar.setPassword(password.getText().toString());
         usuarioParaEnviar.setEdad(Integer.parseInt(edad.getText().toString()));
         usuarioParaEnviar.setEmail(mail.getText().toString());
-        usuarioParaEnviar.setMonedas(100);
+        usuarioParaEnviar.setMonedas(200);
 
         DatabaseHelper dbHelper = new DatabaseHelper(mContext);
         dbHelper.insert(usuarioParaEnviar);

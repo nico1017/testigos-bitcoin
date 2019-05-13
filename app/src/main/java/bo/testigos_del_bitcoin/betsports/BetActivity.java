@@ -19,6 +19,7 @@ import android.support.v7.widget.Toolbar;
 //import com.Timer_con_countdown.Timer_con_countdown;
 import com.google.gson.Gson;
 
+import bo.testigos_del_bitcoin.betsports.db.DatabaseHelper;
 import bo.testigos_del_bitcoin.betsports.model.Deportes;
 
 import android.os.CountDownTimer;
@@ -27,6 +28,7 @@ public class BetActivity extends AppCompatActivity {
     private TextView cuota1;
 
     private Context mContext;
+    private String usuarioConectado;
 
     private TextView nombreEquipo1;
     private TextView nombreEquipo2;
@@ -37,7 +39,11 @@ public class BetActivity extends AppCompatActivity {
     private TextView gananciText;
     private TextView monedas;
 
+    private DatabaseHelper dbhelper;
+
     private Toolbar toolbar;
+
+    private int cantActual;
 
 
     Contador counter;
@@ -51,8 +57,18 @@ public class BetActivity extends AppCompatActivity {
 
         initViews();
 
+        Intent intent = getIntent();
+        usuarioConectado = intent.getStringExtra(Constants.CODIGO_PASAR_A_APUESTA);
+
+        dbhelper = new DatabaseHelper(mContext);
+        monedas.setText(String.valueOf(dbhelper.getMonedasDeUsuario(usuarioConectado)));
+
+        reciveData();
+        addEvents();
+
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -60,8 +76,6 @@ public class BetActivity extends AppCompatActivity {
             }
         });
 
-        reciveData();
-        addEvents();
     }
 
     public void initViews(){
@@ -106,7 +120,14 @@ public class BetActivity extends AppCompatActivity {
                     cantidad.setText("200");
                     Toast.makeText(mContext, "La apuesta minima es de 200$", Toast.LENGTH_LONG).show();
                 }else if(Integer.parseInt(cantidad.getText().toString()) >= 200) {
-                    Toast.makeText(mContext, "Tu apuesta ha sido registrada", Toast.LENGTH_LONG).show();
+                    cantActual = Integer.parseInt(monedas.getText().toString());
+                    if(cantActual >= Integer.parseInt(cantidad.getText().toString())){
+                        Toast.makeText(mContext, "Tu apuesta ha sido registrada", Toast.LENGTH_LONG).show();
+                        cantActual = Integer.parseInt(monedas.getText().toString()) - Integer.parseInt(cantidad.getText().toString());
+                        monedas.setText(String.valueOf(cantActual));
+                    }else{
+                        Toast.makeText(mContext, "Saldo insuficiente", Toast.LENGTH_LONG).show();
+                    }
                 }else {
                     cantidad.setText("200");
                     Toast.makeText(mContext, "La apuesta minima es de 200$", Toast.LENGTH_LONG).show();
@@ -132,16 +153,22 @@ public class BetActivity extends AppCompatActivity {
 
         @Override
         public void onTick(long millisUntilFinished) {
-            simularJuego();
         }
 
     }
 
     public void simularJuego(){
         int posibilidad;
-        posibilidad = (int) (Math.random() * 2);
-        if (posibilidad == 0){
-            monedas.setText("200");
+        posibilidad = (int) ((Math.random() * 2) + 1);
+        if (posibilidad == 2){
+            int apuesta;
+            double ganancia;
+            int total;
+
+            apuesta = Integer.parseInt(cantidad.getText().toString());
+            ganancia = Double.valueOf(cuota1.getText().toString());
+            total = (int)(apuesta*ganancia);
+            monedas.setText(String.valueOf(total+cantActual));
             Toast.makeText(mContext, "Ganaste tu apuesta!", Toast.LENGTH_LONG).show();
         }else{
             Toast.makeText(mContext, "Perdiste tu apuesta", Toast.LENGTH_LONG).show();

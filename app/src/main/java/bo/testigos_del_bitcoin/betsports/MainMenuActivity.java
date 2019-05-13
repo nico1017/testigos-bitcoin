@@ -217,16 +217,19 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
             Intent intent = new Intent(mContext, BetActivity.class);
             String seleccionado = new Gson().toJson(listProximos.get(position));
             intent.putExtra(Constants.CODIGO_PASAR_A_APUESTA1, seleccionado);
+            intent.putExtra(Constants.CODIGO_PASAR_A_APUESTA, usuarioConectado);
             startActivity(intent);
         }else if(i == 2){
             Intent intent = new Intent(mContext, BetActivity.class);
             String seleccionado = new Gson().toJson(listPopulares.get(position));
             intent.putExtra(Constants.CODIGO_PASAR_A_APUESTA2, seleccionado);
+            intent.putExtra(Constants.CODIGO_PASAR_A_APUESTA, usuarioConectado);
             startActivity(intent);
         }else if(i == 3){
             Intent intent = new Intent(mContext, BetActivity.class);
             String seleccionado = new Gson().toJson(listEnJuego.get(position));
             intent.putExtra(Constants.CODIGO_PASAR_A_APUESTA3, seleccionado);
+            intent.putExtra(Constants.CODIGO_PASAR_A_APUESTA, usuarioConectado);
             startActivity(intent);
         }
     }

@@ -86,6 +86,7 @@ public class BetActivity extends AppCompatActivity {
             }
         });
 
+        jugar.setVisibility(View.VISIBLE);
     }
 
     @Override
@@ -137,6 +138,7 @@ public class BetActivity extends AppCompatActivity {
                     } else if (Integer.parseInt(cantidad.getText().toString()) >= 200) {
                         cantActual = Integer.parseInt(monedas.getText().toString());
                         if (cantActual >= Integer.parseInt(cantidad.getText().toString())) {
+                            jugar.setVisibility(View.INVISIBLE);
                             Toast.makeText(mContext, "Tu apuesta ha sido registrada", Toast.LENGTH_LONG).show();
                             cantActual = Integer.parseInt(monedas.getText().toString()) - Integer.parseInt(cantidad.getText().toString());
                             monedas.setText(String.valueOf(cantActual));

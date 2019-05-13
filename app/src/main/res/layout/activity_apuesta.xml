@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/light_background">
 
 
@@ -72,7 +73,7 @@
 
         </LinearLayout>
 
-        <LinearLayout
+        <!--<LinearLayout
             android:id="@+id/equipoA"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -98,7 +99,7 @@
                 android:textAlignment="center"
                 android:textSize="24sp" />
 
-        </LinearLayout>
+        </LinearLayout>-->
 
         <LinearLayout
             android:id="@+id/equipoB"
@@ -109,7 +110,51 @@
             android:paddingTop="30sp"
             android:paddingEnd="@dimen/title">
 
-            <TextView
+            <RadioGroup android:id="@+id/GrbGrupo1"
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <RadioButton android:id="@+id/nombreEquipo1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Equipo 1"
+                    android:textSize="@dimen/title"/>
+
+                <RadioButton android:id="@+id/nombreEquipo2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Equipo 2"
+                    android:textSize="@dimen/title"
+                    android:layout_marginTop="@dimen/space_xl"/>
+            </RadioGroup>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/cuota1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="3.5"
+                    android:gravity="end"
+                    android:textSize="@dimen/super_title"/>
+
+                <TextView
+                    android:id="@+id/cuota2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="3.5"
+                    android:gravity="end"
+                    android:textSize="@dimen/super_title"
+                    android:layout_marginTop="@dimen/space_xl"/>
+            </LinearLayout>
+
+           <!-- <TextView
                 android:id="@+id/nombreEquipoB"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -124,7 +169,7 @@
                 android:layout_weight="1"
                 android:text="3.6"
                 android:textAlignment="center"
-                android:textSize="24sp" />
+                android:textSize="24sp" />-->
         </LinearLayout>
 
         <LinearLayout

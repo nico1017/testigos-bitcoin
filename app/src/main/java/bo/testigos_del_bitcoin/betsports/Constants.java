@@ -9,6 +9,7 @@ public class Constants {
     public static final String CODIGO_PASAR_A_USUARIO = "pasar usuario";
     public static final String CODIGO_PASAR_A_MAINMENU = "pasar a main";
     public static final String CODIGO_PASAR_A_DATOSUSUARIO = "pasar a datos usuario";
+    public static final String CODIGO_PASAR_NOMBRE_USUARIO = "pasar nombre de usario";
 
     //SahredPreferences
     public static final String PREF_USER = "prefUsuario";

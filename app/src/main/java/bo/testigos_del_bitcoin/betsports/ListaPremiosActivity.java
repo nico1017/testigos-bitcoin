@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import bo.testigos_del_bitcoin.betsports.adapter.CategoriasPremiosAdapter;
+import bo.testigos_del_bitcoin.betsports.db.DatabaseHelper;
 import bo.testigos_del_bitcoin.betsports.model.Premios;
 
 
@@ -28,10 +29,14 @@ public class ListaPremiosActivity extends AppCompatActivity {
     private GridView premios;
     private TextView premCategoria;
     private CategoriasPremiosAdapter premiosAdapter;
+    private String usuarioConectado;
 
     private List<Premios> premiosArray = new ArrayList<>();
 
     private Toolbar toolbar;
+    private TextView cantidad_monedas;
+
+    private DatabaseHelper dbHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,11 +99,21 @@ public class ListaPremiosActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        dbHelper = new DatabaseHelper(mContext);
+        cantidad_monedas.setText(String.valueOf(dbHelper.getMonedasDeUsuario(usuarioConectado)) + "$");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        cantidad_monedas.setText(String.valueOf(dbHelper.getMonedasDeUsuario(usuarioConectado)) + "$");
     }
 
     private void receiveData() {
         Intent intent = getIntent();
         categoriaElegida = intent.getStringExtra(Constants.KEY_PREMIO);
+        usuarioConectado = intent.getStringExtra(Constants.CODIGO_PASAR_NOMBRE_USUARIO);
     }
 
     private void initViews() {
@@ -108,6 +123,7 @@ public class ListaPremiosActivity extends AppCompatActivity {
         premios.setAdapter(premiosAdapter);
 
         toolbar = findViewById(R.id.toolbar);
+        cantidad_monedas = findViewById(R.id.cantidad_monedas);
     }
 
     /*private void addEvents() {

@@ -2,8 +2,10 @@ package bo.testigos_del_bitcoin.betsports;
 
  import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
-import android.support.v4.content.ContextCompat;
+ import android.content.SharedPreferences;
+ import android.net.Uri;
+ import android.preference.PreferenceManager;
+ import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -79,7 +81,7 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
         usuarioConectado = intent.getStringExtra(Constants.CODIGO_PASAR_A_MAINMENU);
 
         dbhelper = new DatabaseHelper(mContext);
-        cantidad_monedas.setText(dbhelper.getMonedasDeUsuario(usuarioConectado) + "$");
+        cantidad_monedas.setText(String.valueOf(dbhelper.getMonedasDeUsuario(usuarioConectado)));
 
         if (this.toolbar != null) {
             // Aqui configuramos nuestro Toolbar, con el ícono del Drawer a la izquierda
@@ -95,6 +97,37 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
                 }
             });
         }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        cantidad_monedas.setText(String.valueOf(dbhelper.getMonedasDeUsuario(usuarioConectado)) + "$");
+    }
+
+    @Override
+    protected void onRestart(){
+        super.onRestart();
+        cantidad_monedas.setText(String.valueOf(dbhelper.getMonedasDeUsuario(usuarioConectado)) + "$");
+    }
+
+    @Override
+    protected void onStart(){
+        super.onStart();
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(mContext);
+        cantidad_monedas.setText(String.valueOf(dbhelper.getMonedasDeUsuario(usuarioConectado)) + "$");
+    }
+
+    @Override
+    protected void onPause(){
+        super.onPause();
+        cantidad_monedas.setText(String.valueOf(dbhelper.getMonedasDeUsuario(usuarioConectado)) + "$");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        cantidad_monedas.setText(String.valueOf(dbhelper.getMonedasDeUsuario(usuarioConectado)) + "$");
     }
 
     public void initViews(){
@@ -240,6 +273,7 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
 
         Intent intent = new Intent(mContext, ListaDeportesActivity.class);
         intent.putExtra(Constants.KEY_DEPORTE, deporte);
+        intent.putExtra(Constants.CODIGO_PASAR_NOMBRE_USUARIO, usuarioConectado);
         startActivity(intent);
     }
 
@@ -248,6 +282,7 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
 
         Intent intent = new Intent(mContext, ListaDeportesActivity.class);
         intent.putExtra(Constants.KEY_DEPORTE, deporte);
+        intent.putExtra(Constants.CODIGO_PASAR_NOMBRE_USUARIO, usuarioConectado);
         startActivity(intent);
     }
 
@@ -256,6 +291,7 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
 
         Intent intent = new Intent(mContext, ListaDeportesActivity.class);
         intent.putExtra(Constants.KEY_DEPORTE, deporte);
+        intent.putExtra(Constants.CODIGO_PASAR_NOMBRE_USUARIO, usuarioConectado);
         startActivity(intent);
     }
 
@@ -264,6 +300,7 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
 
         Intent intent = new Intent(mContext, ListaDeportesActivity.class);
         intent.putExtra(Constants.KEY_DEPORTE, deporte);
+        intent.putExtra(Constants.CODIGO_PASAR_NOMBRE_USUARIO, usuarioConectado);
         startActivity(intent);
     }
 
@@ -272,6 +309,7 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
 
         Intent intent = new Intent(mContext, ListaDeportesActivity.class);
         intent.putExtra(Constants.KEY_DEPORTE, deporte);
+        intent.putExtra(Constants.CODIGO_PASAR_NOMBRE_USUARIO, usuarioConectado);
         startActivity(intent);
     }
 
@@ -280,6 +318,7 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
 
         Intent intent = new Intent(mContext, ListaDeportesActivity.class);
         intent.putExtra(Constants.KEY_DEPORTE, deporte);
+        intent.putExtra(Constants.CODIGO_PASAR_NOMBRE_USUARIO, usuarioConectado);
         startActivity(intent);
     }
 
@@ -288,6 +327,7 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
 
         Intent intent = new Intent(mContext, ListaDeportesActivity.class);
         intent.putExtra(Constants.KEY_DEPORTE, deporte);
+        intent.putExtra(Constants.CODIGO_PASAR_NOMBRE_USUARIO, usuarioConectado);
         startActivity(intent);
     }
 
@@ -296,6 +336,7 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
 
         Intent intent = new Intent(mContext, ListaDeportesActivity.class);
         intent.putExtra(Constants.KEY_DEPORTE, deporte);
+        intent.putExtra(Constants.CODIGO_PASAR_NOMBRE_USUARIO, usuarioConectado);
         startActivity(intent);
     }
 
@@ -304,6 +345,7 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
 
         Intent intent = new Intent(mContext, ListaPremiosActivity.class);
         intent.putExtra(Constants.KEY_PREMIO, premio);
+        intent.putExtra(Constants.CODIGO_PASAR_NOMBRE_USUARIO, usuarioConectado);
         startActivity(intent);
     }
 
@@ -312,6 +354,7 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
 
         Intent intent = new Intent(mContext, ListaPremiosActivity.class);
         intent.putExtra(Constants.KEY_PREMIO, premio1);
+        intent.putExtra(Constants.CODIGO_PASAR_NOMBRE_USUARIO, usuarioConectado);
         startActivity(intent);
     }
 
@@ -320,6 +363,7 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
 
         Intent intent = new Intent(mContext, ListaPremiosActivity.class);
         intent.putExtra(Constants.KEY_PREMIO, premio);
+        intent.putExtra(Constants.CODIGO_PASAR_NOMBRE_USUARIO, usuarioConectado);
         startActivity(intent);
     }
 

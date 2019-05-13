@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import bo.testigos_del_bitcoin.betsports.adapter.CategoriasDeportesAdapter;
+import bo.testigos_del_bitcoin.betsports.db.DatabaseHelper;
 import bo.testigos_del_bitcoin.betsports.model.Deportes;
 
 public class ListaDeportesActivity extends AppCompatActivity {
@@ -28,10 +29,13 @@ public class ListaDeportesActivity extends AppCompatActivity {
     private ListView deportes;
     private TextView depCategoria;
     private CategoriasDeportesAdapter deportesAdapter;
+    private String usuarioConectado;
 
     private List<Deportes> deportesArray = new ArrayList<>();
 
     private Toolbar toolbar;
+    private TextView cantidad_monedas;
+    private DatabaseHelper dbHelpper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -164,11 +168,21 @@ public class ListaDeportesActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        dbHelpper = new DatabaseHelper(mContext);
+        cantidad_monedas.setText(String.valueOf(dbHelpper.getMonedasDeUsuario(usuarioConectado)) + "$");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        cantidad_monedas.setText(String.valueOf(dbHelpper.getMonedasDeUsuario(usuarioConectado)) + "$");
     }
 
     private void receiveData() {
         Intent intent = getIntent();
         categoriaElegida = intent.getStringExtra(Constants.KEY_DEPORTE);
+        usuarioConectado = intent.getStringExtra(Constants.CODIGO_PASAR_NOMBRE_USUARIO);
 
     }
 
@@ -179,6 +193,7 @@ public class ListaDeportesActivity extends AppCompatActivity {
         deportes.setAdapter(deportesAdapter);
 
         toolbar = findViewById(R.id.toolbar);
+        cantidad_monedas = findViewById(R.id.cantidad_monedas);
     }
 
     private void addEvents() {
@@ -188,6 +203,7 @@ public class ListaDeportesActivity extends AppCompatActivity {
                 Intent intent = new Intent(mContext, BetActivity.class);
                 String seleccionado = new Gson().toJson(deportesArray.get(position));
                 intent.putExtra(Constants.CODIGO_PASAR_A_APUESTA1, seleccionado);
+                intent.putExtra(Constants.CODIGO_PASAR_A_APUESTA, usuarioConectado);
                 startActivity(intent);
 
             }

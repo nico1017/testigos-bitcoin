@@ -6,9 +6,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/logo_app_final"
+        android:icon="@drawable/logo_app_round"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/logo_app_final"
+        android:roundIcon="@drawable/logo_app_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".DatosUsuario">

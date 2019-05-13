@@ -2,6 +2,8 @@ package bo.testigos_del_bitcoin.betsports;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -43,7 +45,14 @@ public class DatosUsuario extends AppCompatActivity implements View.OnClickListe
         reciveData();
         addEvents();
         nombr.setText(nombreUsuario);
-        monedas.setText(dbHelper.getMonedasDeUsuario(nombreUsuario) + "$");
+        monedas.setText(String.valueOf(dbHelper.getMonedasDeUsuario(nombreUsuario)) + "$");
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        monedas.setText(String.valueOf(dbHelper.getMonedasDeUsuario(nombreUsuario)) + "$");
     }
     public void addEvents(){
        // ib1.setOnClickListener(this);

@@ -2,7 +2,9 @@ package bo.testigos_del_bitcoin.betsports;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.text.InputType;
@@ -12,6 +14,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.support.v7.widget.Toolbar;
@@ -30,14 +33,16 @@ public class BetActivity extends AppCompatActivity {
     private Context mContext;
     private String usuarioConectado;
 
-    private TextView nombreEquipo1;
-    private TextView nombreEquipo2;
+    private RadioButton nombreEquipo1;
+    private RadioButton nombreEquipo2;
     private TextView cuota2;
     private EditText cantidad;
-    private ImageView backArrow;
     private Button jugar;
     private TextView gananciText;
     private TextView monedas;
+    private int apuesta;
+    private double ganancia;
+    private int total;
 
     private DatabaseHelper dbhelper;
 
@@ -69,6 +74,11 @@ public class BetActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        apuesta = Integer.parseInt(cantidad.getText().toString());
+        ganancia = Double.valueOf(cuota1.getText().toString());
+        total = (int)(apuesta*ganancia);
+        gananciText.setText(String.valueOf(total));
+
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -78,9 +88,15 @@ public class BetActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        monedas.setText(String.valueOf(dbhelper.getMonedasDeUsuario(usuarioConectado)));
+    }
+
     public void initViews(){
         nombreEquipo1 = findViewById(R.id.nombreEquipo1);
-        nombreEquipo2 = findViewById(R.id.nombreEquipoB);
+        nombreEquipo2 = findViewById(R.id.nombreEquipo2);
         cuota1 = findViewById(R.id.cuota1);
         cuota2 = findViewById(R.id.cuota2);
         cantidad = findViewById(R.id.cantidad);
@@ -90,7 +106,6 @@ public class BetActivity extends AppCompatActivity {
         cantidad.setInputType(InputType.TYPE_CLASS_NUMBER);
 
         jugar = findViewById(R.id.button);
-        backArrow = findViewById(R.id.backArrow);
         toolbar = findViewById(R.id.toolbar);
     }
 
@@ -115,27 +130,33 @@ public class BetActivity extends AppCompatActivity {
         jugar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (nombreEquipo1.isChecked() || nombreEquipo2.isChecked()) {
+                    if (cantidad.getText().toString().isEmpty()) {
+                        cantidad.setText("200");
+                        Toast.makeText(mContext, "La apuesta minima es de 200$", Toast.LENGTH_LONG).show();
+                    } else if (Integer.parseInt(cantidad.getText().toString()) >= 200) {
+                        cantActual = Integer.parseInt(monedas.getText().toString());
+                        if (cantActual >= Integer.parseInt(cantidad.getText().toString())) {
+                            Toast.makeText(mContext, "Tu apuesta ha sido registrada", Toast.LENGTH_LONG).show();
+                            cantActual = Integer.parseInt(monedas.getText().toString()) - Integer.parseInt(cantidad.getText().toString());
+                            monedas.setText(String.valueOf(cantActual));
+                            dbhelper.cambiarMonedasDeUsuario(usuarioConectado, cantActual);
 
-                if(cantidad.getText().toString().isEmpty()){
-                    cantidad.setText("200");
-                    Toast.makeText(mContext, "La apuesta minima es de 200$", Toast.LENGTH_LONG).show();
-                }else if(Integer.parseInt(cantidad.getText().toString()) >= 200) {
-                    cantActual = Integer.parseInt(monedas.getText().toString());
-                    if(cantActual >= Integer.parseInt(cantidad.getText().toString())){
-                        Toast.makeText(mContext, "Tu apuesta ha sido registrada", Toast.LENGTH_LONG).show();
-                        cantActual = Integer.parseInt(monedas.getText().toString()) - Integer.parseInt(cantidad.getText().toString());
-                        monedas.setText(String.valueOf(cantActual));
-                    }else{
-                        Toast.makeText(mContext, "Saldo insuficiente", Toast.LENGTH_LONG).show();
+                            counter = new Contador(10000, 1000);
+
+                            counter.start();
+                        } else {
+                            Toast.makeText(mContext, "Saldo insuficiente", Toast.LENGTH_LONG).show();
+                        }
+                    } else {
+                        cantidad.setText("200");
+                        Toast.makeText(mContext, "La apuesta minima es de 200$", Toast.LENGTH_LONG).show();
                     }
+
+
                 }else {
-                    cantidad.setText("200");
-                    Toast.makeText(mContext, "La apuesta minima es de 200$", Toast.LENGTH_LONG).show();
+                    Toast.makeText(mContext, "Elija un Equipo por favor", Toast.LENGTH_LONG).show();
                 }
-
-                counter = new Contador(10000,1000);
-
-                counter.start();
             }
         });
     }
@@ -161,14 +182,12 @@ public class BetActivity extends AppCompatActivity {
         int posibilidad;
         posibilidad = (int) ((Math.random() * 2) + 1);
         if (posibilidad == 2){
-            int apuesta;
-            double ganancia;
-            int total;
-
             apuesta = Integer.parseInt(cantidad.getText().toString());
             ganancia = Double.valueOf(cuota1.getText().toString());
             total = (int)(apuesta*ganancia);
             monedas.setText(String.valueOf(total+cantActual));
+            dbhelper.cambiarMonedasDeUsuario(usuarioConectado, total+cantActual);
+
             Toast.makeText(mContext, "Ganaste tu apuesta!", Toast.LENGTH_LONG).show();
         }else{
             Toast.makeText(mContext, "Perdiste tu apuesta, moral nomas choco", Toast.LENGTH_LONG).show();
